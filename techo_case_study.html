@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHO Argentina - Case Study (Protected)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .password-container {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .lock-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .password-form {
+            margin-top: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-family: 'Lato', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .error-message {
+            color: #e74c3c;
+            margin-top: 1rem;
+            font-weight: 600;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .back-link {
+            margin-top: 2rem;
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+        }
+
+        /* Hidden content section */
+        .protected-content {
+            display: none;
+        }
+
+        .protected-content.unlocked {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="password-container" id="passwordContainer">
+        <div class="lock-icon">🔒</div>
+        <h1>TECHO Argentina</h1>
+        <p class="subtitle">This case study is password protected</p>
+        
+        <form class="password-form" id="passwordForm" onsubmit="checkPassword(event)">
+            <div class="input-group">
+                <label for="password">Enter Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required autofocus>
+            </div>
+            
+            <button type="submit" class="submit-btn">Unlock Case Study</button>
+            
+            <p class="error-message" id="errorMessage">❌ Incorrect password. Please try again.</p>
+        </form>
+        
+        <a href="projects.html" class="back-link">← Back to Projects</a>
+    </div>
+
+    <div class="protected-content" id="protectedContent">
+        <!-- The actual case study content will go here after password is entered -->
+        <div style="background: white; min-height: 100vh; padding: 2rem;">
+            <header style="background: white; padding: 1.5rem 3rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); position: fixed; top: 0; left: 0; right: 0; z-index: 999;">
+                <nav style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="font-size: 1.2rem; font-weight: 700; color: #667eea;">aiman afzal arain</div>
+                    <ul style="list-style: none; display: flex; gap: 2rem;">
+
+                        <li><a href="about.html" style="text-decoration: none; color: #666; font-weight: 600;">about</a></li>
+                        <li><a href="projects.html" style="text-decoration: none; color: #666; font-weight: 600;">projects</a></li>
+                        <li><a href="AimanAfzalArainDesignResume.pdf" target="_blank" style="text-decoration: none; color: #666; font-weight: 600;">resume</a></li>
+                        <li><a href="about.html#contact" style="text-decoration: none; color: #666; font-weight: 600;">contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div style="max-width: 1200px; margin: 0 auto; padding: 120px 2rem 4rem;">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4rem; border-radius: 20px; text-align: center; margin-bottom: 3rem;">
+                    <h1 style="font-size: 3rem; margin-bottom: 1rem; text-transform: uppercase;">TECHO ARGENTINA</h1>
+                    <p style="font-size: 1.3rem; margin-bottom: 2rem;">Designing TECHO's First Online Store</p>
+                    <p style="font-size: 1.1rem; opacity: 0.9;">Product Design | E-Commerce | Non-Profit</p>
+                </div>
+
+                <div style="background: #f9fafb; padding: 3rem; border-radius: 16px; margin-bottom: 3rem;">
+                    <h2 style="font-size: 2rem; color: #667eea; margin-bottom: 1.5rem; text-transform: uppercase;">📋 Project Overview</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1.5rem;">
+                        TECHO is a non-profit organization working to overcome poverty in Latin America through youth-led community development. I was brought on as a Product Designer to design their first-ever online store, enabling supporters to purchase merchandise and donate to the cause through a seamless digital experience.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        The challenge was to create an e-commerce platform that balanced TECHO's mission-driven values with conversion optimization, making it easy for supporters to contribute while maintaining the organization's authentic, grassroots identity.
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    <div style="background: white; padding: 2rem; border-radius: 12px; border-left: 4px solid #667eea;">
+                        <h3 style="color: #667eea; margin-bottom: 1rem; text-transform: uppercase;">Role</h3>
+                        <p style="color: #555;">Product Designer</p>
+                    </div>
+                    <div style="background: white; padding: 2rem; border-radius: 12px; border-left: 4px solid #764ba2;">
+                        <h3 style="color: #764ba2; margin-bottom: 1rem; text-transform: uppercase;">Duration</h3>
+                        <p style="color: #555;">8 weeks</p>
+                    </div>
+                    <div style="background: white; padding: 2rem; border-radius: 12px; border-left: 4px solid #ec4899;">
+                        <h3 style="color: #ec4899; margin-bottom: 1rem; text-transform: uppercase;">Impact</h3>
+                        <p style="color: #555;">15% conversion increase</p>
+                    </div>
+                    <div style="background: white; padding: 2rem; border-radius: 12px; border-left: 4px solid #8b5cf6;">
+                        <h3 style="color: #8b5cf6; margin-bottom: 1rem; text-transform: uppercase;">Team</h3>
+                        <p style="color: #555;">Solo Designer</p>
+                    </div>
+                </div>
+
+                <div style="background: white; padding: 3rem; border-radius: 16px; margin-bottom: 3rem;">
+                    <h2 style="font-size: 2rem; color: #667eea; margin-bottom: 1.5rem; text-transform: uppercase;">🎯 The Challenge</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1.5rem;">
+                        TECHO had never had an online store before. All merchandise sales and donations were handled through in-person events or third-party platforms that took significant commission fees. The organization needed a custom e-commerce solution that would:
+                    </p>
+                    <ul style="font-size: 1.1rem; line-height: 2; color: #555; margin-left: 2rem; margin-bottom: 1.5rem;">
+                        <li>Reduce checkout friction (existing process had 9 steps)</li>
+                        <li>Increase conversion rates for both merchandise and donations</li>
+                        <li>Maintain TECHO's authentic, community-focused brand identity</li>
+                        <li>Work seamlessly on mobile devices (primary user platform)</li>
+                        <li>Integrate with existing payment systems in Argentina</li>
+                    </ul>
+                </div>
+
+                <div style="background: #f0f8ff; padding: 3rem; border-radius: 16px; margin-bottom: 3rem;">
+                    <h2 style="font-size: 2rem; color: #667eea; margin-bottom: 1.5rem; text-transform: uppercase;">💡 The Solution</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1.5rem;">
+                        I designed a streamlined e-commerce platform that reduced the checkout process from 9 steps to just 3, resulting in a 15% increase in conversion rates. The design prioritized mobile-first interactions, clear calls-to-action, and emotional storytelling that connected merchandise purchases to TECHO's mission.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        Key features included one-click donation options, progress indicators during checkout, and impact statements showing how each purchase contributed to community development projects.
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 3rem; border-radius: 16px; margin-bottom: 3rem;">
+                    <h2 style="font-size: 2rem; color: #667eea; margin-bottom: 1.5rem; text-transform: uppercase;">📈 Results & Impact</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                        <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+                            <div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">15%</div>
+                            <div style="font-size: 1rem;">Conversion Increase</div>
+                        </div>
+                        <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #764ba2 0%, #ec4899 100%); border-radius: 12px; color: white;">
+                            <div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">9→3</div>
+                            <div style="font-size: 1rem;">Checkout Steps Reduced</div>
+                        </div>
+                        <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); border-radius: 12px; color: white;">
+                            <div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">85%</div>
+                            <div style="font-size: 1rem;">Mobile Traffic</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;">
+                    <a href="projects.html" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem;">← Back to Projects</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const correctPassword = "789321";
+
+        function checkPassword(event) {
+            event.preventDefault();
+            
+            const passwordInput = document.getElementById('password');
+            const errorMessage = document.getElementById('errorMessage');
+            const passwordContainer = document.getElementById('passwordContainer');
+            const protectedContent = document.getElementById('protectedContent');
+            
+            if (passwordInput.value === correctPassword) {
+                // Hide password form
+                passwordContainer.style.display = 'none';
+                
+                // Show protected content
+                protectedContent.classList.add('unlocked');
+                
+                // Change body background
+                document.body.style.background = 'white';
+                document.body.style.display = 'block';
+                document.body.style.alignItems = 'flex-start';
+                document.body.style.justifyContent = 'flex-start';
+                document.body.style.padding = '0';
+            } else {
+                // Show error message
+                errorMessage.classList.add('show');
+                passwordInput.value = '';
+                passwordInput.focus();
+                
+                // Hide error after 3 seconds
+                setTimeout(() => {
+                    errorMessage.classList.remove('show');
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>
+

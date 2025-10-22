@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futre: AI-Powered Career Exploration Platform - aiman afzal arain</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Futre Case Study Specific Styles - FINAL VERSION */
+        
+        /* Reset and Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding-top: 90px;
+        }
+        
+        /* Hero Section - Solid Color with Info Box */
+        .case-study-hero {
+            background-color: #6366f1; /* Solid Futre brand color */
+            color: white;
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+        }
+        
+        .hero-content {
+            background: rgba(255, 255, 255, 0.97);
+            padding: 3rem 4rem;
+            border-radius: 16px;
+            max-width: 900px;
+            color: #333;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        .futre-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: #6366f1;
+            text-transform: uppercase;
+        }
+        
+        .hero-content .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            color: #555;
+        }
+        
+        .case-study-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            text-align: center;
+        }
+        
+        .meta-label {
+            font-size: 0.8rem;
+            color: #6366f1;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .meta-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* TL;DR Section */
+        .tldr-section {
+            max-width: 1200px;
+            margin: -2rem auto 4rem;
+            margin-left: 280px;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .tldr-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            padding: 3rem;
+        }
+        
+        .tldr-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid #6366f1;
+        }
+        
+        .tldr-header h2 {
+            font-size: 2rem;
+            color: #6366f1;
+            margin: 0;
+            
+        }
+        
+        .tldr-content {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .tldr-item {
+            border-left: 4px solid #4ECDC4;
+            padding-left: 1.5rem;
+        }
+        
+        .tldr-item h3 {
+            color: #6366f1;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            
+        }
+        
+        .tldr-item p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        .tldr-highlights {
+            background: #f0f8ff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .tldr-highlights h3 {
+            color: #6366f1;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            
+        }
+        
+        .highlight-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid #4ECDC4;
+        }
+        
+        .highlight-item p {
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        /* Side Navigation */
+        .side-navigation {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 200px;
+            z-index: 100;
+            max-height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+        
+        .side-navigation h3 {
+            font-size: 0.9rem;
+            color: #6366f1;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .side-navigation ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .side-navigation ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .side-navigation ul li a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+            border-left: 3px solid transparent;
+            padding-left: 1rem;
+            
+        }
+        
+        .side-navigation ul li a:hover {
+            color: #6366f1;
+            border-left-color: #4ECDC4;
+        }
+        
+        .side-navigation ul li a.active {
+            color: #6366f1;
+            font-weight: 600;
+            border-left-color: #6366f1;
+        }
+        
+        /* Main Content Area */
+        .case-study-content {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+            margin-left: 280px;
+        }
+        
+        /* Section Headings */
+        .section-heading {
+            color: #6366f1;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 4rem 0 2rem;
+            
+        }
+        
+        .section-subheading {
+            color: #4ECDC4;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 3rem 0 1.5rem;
+            
+        }
+        
+        /* Overview Cards */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .overview-card {
+            background: white;
+            border: 2px solid #4ECDC4;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .overview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .overview-card h3 {
+            color: #6366f1;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            
+        }
+        
+        .overview-card p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        /* Pull Quote */
+        .pull-quote {
+            background: #e8f5e9;
+            padding: 3rem 4rem;
+            border-radius: 12px;
+            margin: 4rem auto;
+            text-align: center;
+            border-left: 5px solid #2e7d32;
+            max-width: 900px;
+        }
+        
+        .pull-quote p {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2e7d32;
+            line-height: 1.7;
+            margin: 0;
+            font-style: italic;
+        }
+        
+        /* Numbered Sections */
+        .numbered-section {
+            display: flex;
+            gap: 2rem;
+            margin: 2.5rem 0;
+            align-items: flex-start;
+        }
+        
+        /* Wireframe Grid Styling */
+        .wireframe-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .wireframe-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .wireframe-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .image-caption {
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .number-badge {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .numbered-content {
+            flex: 1;
+        }
+        
+        .numbered-content h4 {
+            color: #6366f1;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            
+        }
+        
+        .numbered-content p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        /* Insight Boxes */
+        .insight-box {
+            background: #fff5e6;
+            border-left: 5px solid #FF9A56;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .insight-box h4 {
+            color: #FF9A56;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            
+        }
+        
+        .insight-box p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        /* Quote Block */
+        .quote-block {
+            border-left: 5px solid #4ECDC4;
+            padding-left: 2rem;
+            padding: 2rem;
+            background: #f0f8ff;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+        
+        .quote-block p {
+            font-style: italic;
+            color: #555;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+        
+        .quote-block .quote-author {
+            font-style: normal;
+            color: #888;
+            font-size: 1rem;
+            margin-top: 1rem;
+            display: block;
+        }
+        
+        /* Screenshot Grid */
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .screenshot-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .screenshot-item img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .screenshot-caption {
+            padding: 1.5rem;
+        }
+        
+        .screenshot-caption h4 {
+            color: #6366f1;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            
+        }
+        
+        .screenshot-caption p {
+            color: #555;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        
+        /* Stat Cards */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #6366f1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: #fffbea;
+            border: 2px solid #f6ad55;
+            border-radius: 12px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .highlight-box p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .side-navigation {
+                display: none;
+            }
+            
+            .case-study-content {
+                margin-left: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .case-study-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-heading {
+                font-size: 2rem;
+            }
+            
+            .tldr-card {
+                padding: 2rem;
+            }
+            
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+/* === FIX: Prevent Hero from hiding under Navbar === */
+header nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 999;
+  padding: 1rem 3rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Optional: Anchor offset for side navigation links */
+:target::before {
+  content: "";
+  display: block;
+  height: 100px;
+  margin-top: -100px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">aiman afzal arain</div>
+            <ul>
+
+                <li><a href="about.html">about</a></li>
+                <li><a href="projects.html">projects</a></li>
+                <li><a href="AimanAfzalArainDesignResume.pdf" target="_blank">resume</a></li>
+                <li><a href="about.html#contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="case-study-hero">
+        <div class="hero-content">
+            <img src="future/futre_logo.png" alt="Futre Logo" class="futre-logo">
+            <h1>Futre: AI-Powered Career Exploration PLATFORM</h1>
+            <p class="subtitle">Designing intuitive UI/UX for 800+ careers and building a comprehensive career data ecosystem</p>
+            
+            <div class="case-study-meta">
+                <div class="meta-item">
+                    <div class="meta-label">ROLE</div>
+                    <div class="meta-value">Associate Product & User Manager</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">DURATION</div>
+                    <div class="meta-value">November 2024 - May 2025</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">TEAM</div>
+                    <div class="meta-value">Product, Engineering, Research</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">PARTNER</div>
+                    <div class="meta-value">Point of Beginning, Ltd.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TL;DR Section -->
+    <section class="tldr-section">
+        <div class="tldr-card">
+            <div class="tldr-header">
+                <span style="font-size: 2rem;">🧭</span>
+                <h2>TL;DR — DESIGNING FUTRE</h2>
+            </div>
+            
+            <div class="tldr-content">
+                <div class="tldr-item">
+                    <h3>🎯 The Challenge</h3>
+                    <p>Students are overwhelmed by career options and lack transparent, data-driven resources to make informed decisions about their futures. Existing tools are outdated, generic, and fail to represent non-traditional career paths.</p>
+                </div>
+                
+                <div class="tldr-item">
+                    <h3>💡 THE SOLUTION</h3>
+                    <p>I designed Futre, an AI-powered career exploration platform that helps students discover, compare, and plan for 800+ careers through clear data visualization, personalized recommendations, and engaging visuals. The experience balances depth and accessibility — showing complex career data in a scannable, human-centered interface.</p>
+                </div>
+                
+                <div class="tldr-item">
+                    <h3>👨‍💼 My Role</h3>
+                    <p>As Associate Product & User Manager, I led end-to-end design — from user research and information architecture to UI systems, data visualization, and AI recommender integration — collaborating closely with engineers and researchers.</p>
+                </div>
+                
+                <div class="tldr-highlights">
+                    <h3>✨ KEY HIGHLIGHTS</h3>
+                    <div class="highlight-grid">
+                        <div class="highlight-item">
+                            <span style="font-size: 1.5rem;">🎨</span>
+                            <p><strong>Designed UI/UX for 800+ career pages</strong> using scalable components</p>
+                        </div>
+                        <div class="highlight-item">
+                            <span style="font-size: 1.5rem;">🧠</span>
+                            <p><strong>Built a structured data ecosystem</strong> covering 2,000+ careers</p>
+                        </div>
+                        <div class="highlight-item">
+                            <span style="font-size: 1.5rem;">🤖</span>
+                            <p><strong>Designed an AI recommender</strong> achieving 68% satisfaction in pilot testing</p>
+                        </div>
+                        <div class="highlight-item">
+                            <span style="font-size: 1.5rem;">📈</span>
+                            <p><strong>Improved task completion by 70%</strong>, activation by 19%, and click-through by 24% through usability testing and analytics</p>
+                        </div>
+                        <div class="highlight-item">
+                            <span style="font-size: 1.5rem;">🖼️</span>
+                            <p><strong>Created "vibe-coded" AI visuals</strong> that boosted engagement time by 40%</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tldr-item" style="margin-top: 1.5rem;">
+                    <h3>🚀 Impact</h3>
+                    <p>Futre transformed career exploration into a transparent, empowering experience for students — helping them discover new pathways and make confident, data-driven decisions about their futures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Side Navigation -->
+    <nav class="side-navigation">
+        <h3>SECTIONS</h3>
+        <ul>
+            <li><a href="#overview" class="active">overview</a></li>
+            <li><a href="#role">my role & responsibilities</a></li>
+            <li><a href="#principles">platform principles</a></li>
+            <li><a href="#research">research & discovery</a></li>
+            <li><a href="#challenge">the design challenge</a></li>
+            <li><a href="#process">ui/ux design process</a></li>
+            <li><a href="#design">final ui design</a></li>
+            <li><a href="#data-ecosystem">building the data ecosystem</a></li>
+            <li><a href="#vibe-coding">"vibe coding" header images</a></li>
+            <li><a href="#ai-recommender">ai career recommender</a></li>
+            <li><a href="#results">results & impact</a></li>
+            <li><a href="#learnings">key learnings & takeaways</a></li>
+            <li><a href="#future">future opportunities</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="case-study-content">
+        <section id="overview">
+            <h2 class="section-heading">Project Overview</h2>
+            
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #555; margin: 2rem 0; text-align: center;">Modern students need comprehensive, transparent career information to make informed decisions about their futures. Traditional career assessments are outdated and fail to showcase the full spectrum of career possibilities, especially those that don't require a four-year degree. How might we create an engaging, data-rich platform that empowers students to explore 800+ careers and plan their unique pathways?</p>
+
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>The Challenge</h3>
+                    <p>Students felt overwhelmed by career options and lacked detailed information to evaluate careers meaningfully. Existing tools were either too generic or too complex, failing to present data in digestible, scannable formats.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>My Solution</h3>
+                    <p>I designed and built the UI/UX for Futre's career exploration platform, created a comprehensive data ecosystem for 2000+ careers, and developed an AI-powered career recommender. My work focused on making complex career data accessible, engaging, and actionable through intuitive interface design, systematic data architecture, and user-centered interactions.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Impact</h3>
+                    <p>The platform now serves students across multiple schools with 800+ careers, each enriched with salary data, growth projections, educational requirements, and personalized pathways. The AI recommender achieved 68% match satisfaction in pilot testing, while interface improvements increased task completion by 70% and activation by 19%.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="pull-quote">
+            <p>"The platform's success is measured not just in numbers, but in the confidence students gain to explore their futures."</p>
+        </div>
+
+        <section id="role">
+            <h2 class="section-heading">My Role & RESPONSIBILITIES</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">As Associate Product & User Manager at Point of Beginning, I led the design and development of Futre's career exploration platform from concept to launch. My role spanned product strategy, user research, UI/UX design, data architecture, and cross-functional collaboration.</p>
+
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>PRODUCT DESIGN & UI/UX</h3>
+                    <p>Designed the complete user interface for 800+ career pages, including information architecture, visual design system, and interactive components. Created wireframes, prototypes, and high-fidelity mockups in Figma.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>USER RESEARCH & TESTING</h3>
+                    <p>Conducted and moderated 48 user interviews with students and educators. Analyzed behavioral data using GA4 and Looker to identify pain points and opportunities for improvement.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>DATA ARCHITECTURE</h3>
+                    <p>Built a comprehensive data ecosystem for 2000+ careers, including salary information, job outlook, educational requirements, skills, and career pathways. Standardized data collection and quality assurance processes.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>AI RECOMMENDER DESIGN</h3>
+                    <p>Designed and tested an AI-powered career recommendation system that matches students with careers based on their interests, skills, values, and goals. Achieved 68% satisfaction in pilot testing.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>VISUAL CONTENT CREATION</h3>
+                    <p>Created unique "vibe-coded" AI-generated header images for each career using generative AI tools. This creative approach increased time-on-page by 40% compared to generic stock photos.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>CROSS-FUNCTIONAL COLLABORATION</h3>
+                    <p>Worked closely with engineers, researchers, and stakeholders to ensure design feasibility, technical implementation, and alignment with business goals. Facilitated design reviews and iterative feedback sessions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="principles">
+            <h2 class="section-heading">UNDERSTANDING FUTRE: Platform Principles</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0; text-align: center;">Futre was built upon core principles to ensure it remained user-centric, comprehensive, and impactful.</p>
+
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>TRANSPARENT</h3>
+                    <p>Providing clear, unbiased, and comprehensive data on all career paths.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>EXPANSIVE</h3>
+                    <p>Covering a wide array of traditional and emerging careers, including non-linear pathways.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>HOLISTIC</h3>
+                    <p>Offering insights into skills, education, work environment, and personal fit for each career.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2 class="section-heading">Research & Discovery</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">To design an effective career exploration platform, I needed to deeply understand how students think about their futures, what information they need, and what barriers prevent them from making confident career decisions.</p>
+
+            <h3 class="section-subheading">RESEARCH APPROACH</h3>
+            
+            <div class="numbered-section">
+                <div class="number-badge">01</div>
+                <div class="numbered-content">
+                    <h3>USER DIVERSITY</h3>>
+                    <p>Conducted and moderated 48 Zoom interviews with high school and college students to understand their career exploration behaviors, pain points, and information needs.</p>
+                </div>
+            </div>
+
+            <div class="numbered-section">
+                <div class="number-badge">02</div>
+                <div class="numbered-content">
+                    <h4>EDUCATOR INSIGHTS</h4>
+                    <p>Interviewed career counselors and educators to understand how they guide students and what resources they find most effective.</p>
+                </div>
+            </div>
+
+            <div class="numbered-section">
+                <div class="number-badge">03</div>
+                <div class="numbered-content">
+                    <h4>BEHAVIORAL ANALYSIS</h4>
+                    <p>Used GA4 and Looker to analyze user behavior patterns, identifying where students dropped off and what content they engaged with most.</p>
+                </div>
+            </div>
+
+            <h3 class="section-subheading">KEY INSIGHTS</h3>
+            
+            <div class="insight-box">
+                <h4>1. INFORMATION OVERLOAD VS. LACK OF DEPTH</h4>
+                <p>Students felt overwhelmed by too many options but simultaneously lacked the detailed information needed to evaluate careers meaningfully. They wanted comprehensive data presented in digestible, scannable formats.</p>
+            </div>
+
+            <div class="insight-box">
+                <h4>2. VISUAL ENGAGEMENT MATTERS</h4>
+                <p>Career pages with generic stock photos or text-heavy layouts failed to capture student attention. Students responded positively to unique, vibrant visuals that helped them imagine themselves in different careers.</p>
+            </div>
+
+            <div class="insight-box">
+                <h4>3. TRANSPARENCY BUILDS TRUST</h4>
+                <p>Students wanted honest information about salaries, job outlook, required education, and daily work realities. Hiding or sugarcoating information reduced trust and engagement.</p>
+            </div>
+
+            <div class="insight-box">
+                <h4>4. PROGRESSIVE DISCLOSURE REDUCES OVERWHELM</h4>
+                <p>The tab navigation system (Discover, Explore, Plan) allowed students to dive deeper into career details at their own pace without feeling overwhelmed by information density.</p>
+            </div>
+
+            <div class="insight-box">
+                <h4>5. TESTING REVEALS UNEXPECTED INSIGHTS</h4>
+                <p>48 user interviews revealed that students wanted to save and compare multiple careers simultaneously—a feature that became central to the dashboard design.</p>
+            </div>
+
+            <div class="insight-box">
+                <h4>6. AI RECOMMENDATIONS NEED EXPLANATION</h4>
+                <p>Students trusted AI recommendations more when they understood why careers were suggested. Transparency in the matching algorithm increased satisfaction from 52% to 68%.</p>
+            </div>
+
+            <div class="quote-block">
+                <p>"I don't even know what careers exist beyond doctor, lawyer, and engineer. How am I supposed to choose my future when I don't know my options?"</p>
+                <span class="quote-author">— high school junior, age 17</span>
+            </div>
+        </section>
+
+        <section id="challenge">
+            <h2 class="section-heading">THE DESIGN CHALLENGE</h2>
+            
+            <div class="highlight-box">
+                <p><strong>How might we...</strong> create an engaging, data-rich platform that empowers students to explore 800+ careers and plan their unique pathways?</p>
+            </div>
+
+            <h3 class="section-subheading">DESIGN CONSTRAINTS & CONSIDERATIONS</h3>
+            
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>SCALABILITY</h3>
+                    <p>The design system needed to work across 800+ careers with varying data structures and content lengths.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>accessibility</h3>
+                    <p>The platform needed to be accessible to students with diverse learning styles, technical abilities, and devices.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>DATA ACCURACY</h3>3>
+                    <p>Each career page contained 10+ data categories (salary, outlook, requirements, pathways, etc.) that needed to be presented clearly without overwhelming users.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="process">
+            <h2 class="section-heading">UI/UX Design Process</h2>
+            
+            <div class="wireframe-grid">
+                <div class="wireframe-item">
+                    <img src="future/futre_wireframe_homepage.png" alt="Futre Homepage Wireframe" class="full-width-image">
+                    <p class="image-caption">Figure 1: Homepage Wireframe - Initial entry point with AI-driven recommendations and exploration options.</p>
+                </div>
+                <div class="wireframe-item">
+                    <img src="future/futre_wireframe_career_path_detail.png" alt="Futre Career Path Detail Wireframe" class="full-width-image">
+                    <p class="image-caption">Figure 2: Career Path Detail Wireframe - Detailed view of a career, including skills and resources.</p>
+                </div>
+                <div class="wireframe-item">
+                    <img src="future/futre_wireframe_skill_development.png" alt="Futre Skill Development Wireframe" class="full-width-image">
+                    <p class="image-caption">Figure 3: Skill Development Wireframe - User's skill dashboard with recommended learning.</p>
+                </div>
+                <div class="wireframe-item">
+                    <img src="future/futre_wireframe_profile_onboarding.png" alt="Futre Profile Onboarding Wireframe" class="full-width-image">
+                    <p class="image-caption">Figure 4: Profile Onboarding Wireframe - Step-by-step process for user profile setup.</p>
+                </div>
+            </div>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">Our design process for Futre began with low-fidelity wireframes, focusing on core functionality and user flows. These initial sketches, inspired by a clean, modern aesthetic, helped us visualize the platform's structure and key interactions before moving to high-fidelity designs. The wireframes below illustrate critical screens that address the user's journey from initial exploration to personalized skill development and profile management.</p>
+            
+            <h3 class="section-subheading">Information Architecture</h3>
+            
+            <div class="numbered-section">
+                <div class="number-badge">01</div>
+                <div class="numbered-content">
+                    <h4>TAB NAVIGATION SYSTEM</h4>
+                    <p>Organized career information into three progressive tabs: <strong>Discover</strong> (overview and salary), <strong>Explore</strong> (requirements and pathways), and <strong>Plan</strong> (personalized recommendations and next steps). This structure reduced cognitive load and allowed students to explore at their own pace.</p>
+                </div>
+            </div>
+
+            <div class="numbered-section">
+                <div class="number-badge">02</div>
+                <div class="numbered-content">
+                    <h4>DATA VISUALIZATION</h4>
+                    <p>Transformed complex data (salary ranges, job growth projections, education requirements) into scannable visual formats using charts, progress bars, and color-coded indicators.</p>
+                </div>
+            </div>
+
+            <div class="numbered-section">
+                <div class="number-badge">03</div>
+                <div class="numbered-content">
+                    <h4>COMPONENT LIBRARY</h4>
+                    <p>Built a scalable design system with reusable components (career cards, stat displays, pathway diagrams) that maintained consistency across 800+ pages while allowing for content flexibility.</p>
+                </div>
+            </div>
+
+            <div class="numbered-section">
+                <div class="number-badge">04</div>
+                <div class="numbered-content">
+                    <h4>ITERATIVE TESTING</h4>
+                    <p>Conducted multiple rounds of usability testing with students, incorporating feedback to refine navigation, improve readability, and enhance engagement.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="design">
+            <h2 class="section-heading">FINAL UI DESIGN</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0; text-align: center;">The final design showcases a clean, modern interface that balances comprehensive data with visual appeal and usability.</p>
+
+            <div class="screenshot-grid">
+                <div class="screenshot-item">
+                    <img src="future/futre_screenshot1.png" alt="Futre Career Overview">
+                    <div class="screenshot-caption">
+                        <h4>CAREER OVERVIEW: DISCOVER TAB</h4>
+                        <p>The Discover tab provides an at-a-glance overview of each career, including salary ranges, job outlook, and a brief description. The dark theme with teal accents creates a modern, engaging aesthetic.</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="future/futre_screenshot2.png" alt="Futre AI Generation Pipeline">
+                    <div class="screenshot-caption">
+                        <h4>CAREER DETAILS: EXPLORE TAB</h4>
+                        <p>The Explore tab dives deeper into educational requirements, necessary skills, work environment, and daily responsibilities. Information is organized into scannable sections with clear headings.</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="future/futre_screenshot3.png" alt="Futre Educational Requirements">
+                    <div class="screenshot-caption">
+                        <h4>EDUCATIONAL REQUIREMENTS: EXPLORE TAB</h4>
+                        <p>Detailed breakdown of education pathways, including degree requirements, certifications, and alternative routes. Visual indicators show the typical education level for each career.</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="future/futre_screenshot4.png" alt="Futre Working Knowledge">
+                    <div class="screenshot-caption">
+                        <h4>WORKING KNOWLEDGE & ENVIRONMENT</h4>
+                        <p>Provides insights into the daily work environment, required skills, and knowledge areas. Helps students understand what it's really like to work in each career.</p>
+                </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="future/futre_screenshot5.png" alt="Futre Related Careers">
+                    <div class="screenshot-caption">
+                        <h4>RELATED CAREERS EXPLORATION</h4>
+                        <p>Suggests related careers based on similar skills, education, or interests. Encourages students to explore multiple pathways and discover careers they might not have considered.</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="future/futre_screenshot6.png" alt="Futre Personalized Planning">
+                    <div class="screenshot-caption">
+                        <h4>PERSONALIZED PLANNING: PLAN TAB</h4>
+                        <p>The Plan tab offers personalized next steps, including recommended courses, certifications, and action items. Students can save careers to their dashboard for comparison.</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="future/futre_screenshot7.png" alt="Futre Career Dashboard">
+                    <div class="screenshot-caption">
+                        <h4>CAREER DASHBOARD & RECOMMENDATIONS</h4>
+                        <p>The main dashboard displays all saved careers with unique "vibe-coded" header images. Students can compare careers side-by-side and receive AI-powered recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="data-ecosystem">
+            <h2 class="section-heading">Building the Data Ecosystem: 2000+ CAREERS</h2>
+            
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">2000+</div>
+                    <div class="stat-label">careers researched and documented</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">800+</div>
+                    <div class="stat-label">careers with comprehensive UI/UX design and data</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">data categories per career</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">data accuracy through quality assurance</div>
+                </div>
+            </div>
+
+            <h3 class="section-subheading">DATA COLLECTION METHODOLOGY</h3>
+            
+            <div class="numbered-section">
+                <div class="number-badge">01</div>
+                <div class="numbered-content">
+                    <h4>SOURCE IDENTIFICATION</h4>
+                    <p>Identified credible sources for career data, including the Bureau of Labor Statistics (BLS), O*NET, industry reports, and professional associations.</p>
+                </div>
+            </div>
+
+            <div class="numbered-section">
+                <div class="number-badge">02</div>
+                <div class="numbered-content">
+                    <h4>DATA EXTRACTION & STRUCTURING</h4>
+                    <p>Extracted relevant data for each career across 10+ categories: salary ranges, job outlook, educational requirements, skills, work environment, daily tasks, career pathways, related careers, certifications, and industry trends.</p>
+                </div>
+            </div>
+
+            <div class="numbered-section">
+                <div class="number-badge">03</div>
+                <div class="numbered-content">
+                    <h4>STANDARDIZATION & QUALITY ASSURANCE</h4>
+                    <p>Standardized data formats and terminology across all careers to ensure consistency. Implemented quality assurance processes to verify accuracy and completeness.</p>
+                </div>
+            </div>
+
+            <div class="numbered-section">
+                <div class="number-badge">04</div>
+                <div class="numbered-content">
+                    <h4>CONTINUOUS UPDATES</h4>
+                    <p>Established processes for regularly updating career data to reflect changing job markets, salary trends, and industry developments.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <p>This comprehensive data ecosystem became the foundation of Futre's value proposition. By providing detailed, accurate, and up-to-date information for 2000+ careers, we empowered students to make informed decisions based on real-world data rather than assumptions or stereotypes.</p>
+            </div>
+        </section>
+
+        <section id="vibe-coding">
+            <h2 class="section-heading">"VIBE CODING" CAREER HEADER IMAGES</h2>
+            
+            <div class="highlight-box" style="background: #fffbea; border-color: #f6ad55;">
+                <p>One of the most creative challenges was generating unique, engaging header images for each career. Rather than using generic stock photos, I "vibe coded" custom images using AI generation tools, ensuring each career had a distinctive, engaging visual identity that resonated with students.</p>
+            </div>
+
+            <h3 class="section-subheading">THE CREATIVE PROCESS</h3>
+            
+            <div class="numbered-section">
+                <div class="number-badge">01</div>
+                <div class="numbered-content">
+                    <h4>CAREER ESSENCE CAPTURE</h4>
+                    <p>For each career, I identified its core essence, mood, and visual themes. For example, a geographer might suggest exploration, nature, and discovery, while a software engineer might evoke innovation, technology, and problem-solving.</p>
+                </div>
+            </div>
+
+            <div class="numbered-section">
+                <div class="number-badge">02</div>
+                <div class="numbered-content">
+                    <h4>PROMPT ENGINEERING</h4>
+                    <p>Crafted detailed AI prompts that captured the career's vibe, including setting, diverse representation, composition rules (person in environment, clear focal point), and mood descriptors.</p>
+                </div>
+            </div>
+
+            <div class="numbered-section">
+                <div class="number-badge">03</div>
+                <div class="numbered-content">
+                    <h4>GENERATION & CURATION</h4>
+                    <p>Generated multiple image variations for each career and curated the best ones based on visual appeal, diversity in representation, and alignment with the career's essence.</p>
+                </div>
+            </div>
+
+            <div class="numbered-section">
+                <div class="number-badge">04</div>
+                <div class="numbered-content">
+                    <h4>OPTIMIZATION & INTEGRATION</h4>
+                    <p>Optimized images for web performance (compression, responsive sizing) while maintaining visual quality. Integrated images into the design system with consistent aspect ratios, border radius, and overlay treatments.</p>
+                </div>
+            </div>
+
+            <h3 class="section-subheading">WHY CUSTOM VISUALS MATTER</h3>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">User testing revealed that students spent 40% more time on career pages with unique, high-quality header images compared to pages with generic stock photos. The custom visuals helped students imagine themselves in different careers and made the exploration experience more engaging and memorable.</p>
+
+            <div class="quote-block">
+                <p>"The images really help me picture myself in these careers. They feel real and inspiring, not like those boring stock photos."</p>
+                <span class="quote-author">— college sophomore, pilot testing participant</span>
+            </div>
+        </section>
+
+        <section id="ai-recommender">
+            <h2 class="section-heading">AI Career Recommender DESIGN</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">In addition to the career exploration interface, I designed and tested an AI-powered career recommendation system that matches students with careers based on their interests, skills, values, and goals.</p>
+
+            <h3 class="section-subheading">DESIGN APPROACH</h3>
+            
+            <div class="numbered-section">
+                <div class="number-badge">01</div>
+                <div class="numbered-content">
+                    <h4>INPUT DESIGN</h4>
+                    <p>Created an engaging questionnaire that captured student interests, strengths, values, and constraints without feeling like a test. Used conversational language, visual answer options, and progress indicators to maintain engagement.</p>
+                </div>
+            </div>
+
+            <div class="numbered-section">
+                <div class="number-badge">02</div>
+                <div class="numbered-content">
+                    <h4>ALGORITHM COLLABORATION</h4>
+                    <p>Designed, specified, and tested an AI-powered career recommendation system in 5 weeks. Collaborated with engineering to define matching algorithms and user flows that achieved 68% satisfaction in pilot testing.</p>
+                </div>
+            </div>
+
+            <div class="numbered-section">
+                <div class="number-badge">03</div>
+                <div class="numbered-content">
+                    <h4>RESULTS PRESENTATION</h4>
+                    <p>Designed the results page to show match percentages, career highlights, and next steps. Included explanations of why careers were recommended to build trust and transparency.</p>
+                </div>
+            </div>
+
+            <div class="numbered-section">
+                <div class="number-badge">04</div>
+                <div class="numbered-content">
+                    <h4>PILOT TESTING</h4>
+                    <p>Conducted pilot testing with students to validate the recommendation quality. Achieved 68% match satisfaction, with students reporting that the recommendations were relevant and eye-opening.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="results">
+            <h2 class="section-heading">results & impact</h2>
+            
+            <div class="pull-quote">
+                <p>"The platform's success is measured not just in numbers, but in the confidence students gain to explore their futures."</p>
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">+70%</div>
+                    <div class="stat-label">increase in task completion rates after interface improvements</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">68%</div>
+                    <div class="stat-label">AI career match satisfaction in pilot testing</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+19%</div>
+                    <div class="stat-label">increase in activation after onboarding optimization</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+24%</div>
+                    <div class="stat-label">increase in clicks after data-driven optimization</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">800+</div>
+                    <div class="stat-label">careers with comprehensive UI/UX design and data</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2000+</div>
+                    <div class="stat-label">careers researched and documented in the data ecosystem</div>
+                </div>
+            </div>
+
+            <div class="quote-block">
+                <p>"I never knew there were so many career options that didn't require a four-year degree. Futre opened my eyes to pathways I never considered."</p>
+                <span class="quote-author">— high school senior, pilot testing participant</span>
+            </div>
+        </section>
+
+        <section id="learnings">
+            <h2 class="section-heading">key learnings & takeaways</h2>
+            
+            <div class="insight-box">
+                <h4>1. DATA ARCHITECTURE IS DESIGN WORK</h4>
+                <p>Collecting and structuring data for 2000+ careers wasn't just research—it was a critical design decision that shaped the entire platform. The quality and comprehensiveness of the data directly impacted user trust and engagement.</p>
+            </div>
+
+            <div class="insight-box">
+                <h4>2. visual engagement drives exploration</h4>
+                <p>Custom "vibe-coded" header images increased time-on-page by 40%. Students responded to visuals that helped them imagine themselves in different careers, not generic stock photos.</p>
+            </div>
+
+            <div class="insight-box">
+                <h4>3. TRANSPARENCY BUILDS TRUST</h4>
+                <p>Students appreciated honest information about salaries, job outlook, and educational requirements. Hiding or sugarcoating information reduced trust and engagement.</p>
+            </div>
+
+            <div class="insight-box">
+                <h4>4. PROGRESSIVE DISCLOSURE REDUCES OVERWHELM</h4>
+                <p>The tab navigation system (Discover, Explore, Plan) allowed students to dive deeper into career details at their own pace without feeling overwhelmed by information density.</p>
+            </div>
+
+            <div class="insight-box">
+                <h4>5. TESTING REVEALS UNEXPECTED INSIGHTS</h4>
+                <p>48 user interviews revealed that students wanted to save and compare multiple careers simultaneously—a feature that became central to the dashboard design.</p>
+            </div>
+
+            <div class="insight-box">
+                <h4>6. AI recommendations need explanation</h4>
+                <p>Students trusted AI recommendations more when they understood why careers were suggested. Transparency in the matching algorithm increased satisfaction from 52% to 68%.</p>
+            </div>
+        </section>
+
+        <section id="future">
+            <h2 class="section-heading">future opportunities</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">Looking ahead, there are several exciting opportunities to expand Futre's impact:</p>
+
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>personalized learning pathways</h3>
+                    <p>Integrate with online learning platforms to recommend specific courses and certifications based on career goals.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>mentor matching</h3>
+                    <p>Connect students with professionals in their fields of interest for informational interviews and mentorship.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>financial planning tools</h3>
+                    <p>Help students understand the financial implications of different career and education pathways.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>real-time labor market data</h3>
+                    <p>Integrate real-time job postings and labor market trends to keep career information current.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>international expansion</h3>
+                    <p>Expand the platform to include career data for countries beyond the United States.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 4rem 0;">
+                <a href="index_final.html#projects" style="display: inline-block; background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: transform 0.3s ease;">← back to projects</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('.side-navigation a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Update active navigation on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id], main section[id]');
+            const navLinks = document.querySelectorAll('.side-navigation a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

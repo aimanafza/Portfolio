@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lens Beyond Surface - Aiman Afzal Arain</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+            padding-top: 90px;
+        }
+
+        /* === NEW COLOR PALETTE === */
+        :root {
+            --golden-yellow: #EAB71D;
+            --coral-pink: #EC8D8B;
+            --lime-green: #A8B726;
+            --warm-beige: #D7D3BF;
+            --teal-blue: #5D9FA0;
+            --burnt-orange: #DC6327;
+            --charcoal-gray: #3E3E3E;
+            --white: #FFFFFF;
+        }
+
+        /* === NAVIGATION === */
+        header nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            z-index: 999;
+            padding: 1rem 3rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        header nav .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav h1 {
+            font-size: 1.5rem;
+            color: var(--teal-blue);
+            font-weight: 600;
+        }
+
+        header nav h1 a {
+            color: var(--teal-blue);
+            text-decoration: none;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: var(--teal-blue);
+        }
+
+        /* === SIDE NAVIGATION === */
+        .side-nav {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--white);
+            padding: 1.5rem 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 100;
+            max-width: 200px;
+        }
+
+        .side-nav h3 {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .side-nav ul {
+            list-style: none;
+        }
+
+        .side-nav ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .side-nav ul li a {
+            text-decoration: none;
+            color: #64748b;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+            display: block;
+            padding: 0.25rem 0;
+            border-left: 2px solid transparent;
+            padding-left: 0.75rem;
+        }
+
+        .side-nav ul li a:hover,
+        .side-nav ul li a.active {
+            color: var(--teal-blue);
+            border-left-color: var(--teal-blue);
+        }
+
+        /* === HERO SECTION WITH BACKGROUND IMAGE === */
+        .case-study-hero {
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 2rem 4rem;
+            overflow: hidden;
+            background-color: #5D9FA0;
+        }
+
+        .case-study-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('lbs_images/lens_beyond_surface_logo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.25;
+            z-index: 0;
+        }
+
+        /* Removed gradient overlay - using solid background with faded image only */
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .hero-content .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--teal-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: var(--charcoal-gray);
+            text-align: center;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: var(--teal-blue);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #475569;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .case-study-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 2px solid var(--warm-beige);
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--charcoal-gray);
+        }
+
+        /* === MAIN CONTENT === */
+        .case-study-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            margin-left: 280px;
+        }
+
+        /* === TL;DR SECTION === */
+        .tldr-section {
+            background: var(--teal-blue);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            margin-bottom: 4rem;
+            box-shadow: 0 8px 24px rgba(93, 159, 160, 0.3);
+        }
+
+        .tldr-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .tldr-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .tldr-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .highlight-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-item p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* === DELIVERABLE BOX === */
+        .deliverable-box {
+            background: var(--burnt-orange);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+            box-shadow: 0 8px 24px rgba(220, 99, 39, 0.3);
+        }
+
+        .deliverable-box h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .deliverable-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .deliverable-box strong {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        /* === SECTION STYLES === */
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            color: var(--charcoal-gray);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--teal-blue);
+        }
+
+        .content-section h3 {
+            font-size: 1.75rem;
+            color: var(--burnt-orange);
+            margin: 2rem 0 1rem;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #475569;
+        }
+
+        /* === INSIGHT BOXES === */
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .insight-box {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--lime-green);
+        }
+
+        .insight-box h4 {
+            color: var(--lime-green);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .insight-box p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* === PULL QUOTE === */
+        .pull-quote {
+            background: var(--warm-beige);
+            padding: 3rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+            text-align: center;
+            position: relative;
+            border-left: 5px solid var(--golden-yellow);
+        }
+
+        .pull-quote::before {
+            content: '"';
+            font-size: 6rem;
+            color: var(--golden-yellow);
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            font-family: Georgia, serif;
+        }
+
+        .pull-quote p {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--charcoal-gray);
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* === IMAGE STYLES === */
+        .case-study-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #64748b;
+            font-style: italic;
+            margin-top: 0.75rem;
+        }
+
+        /* === COMPARISON SECTION === */
+        .comparison-box {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 2rem 0;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .comparison-header {
+            background: var(--golden-yellow);
+            color: var(--charcoal-gray);
+            padding: 1.5rem 2rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .comparison-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .comparison-side {
+            padding: 2rem;
+        }
+
+        .comparison-side.before {
+            background: #FEE2E2;
+            border-right: 3px solid var(--coral-pink);
+        }
+
+        .comparison-side.after {
+            background: #D1FAE5;
+        }
+
+        .comparison-side h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .comparison-side.before h4 {
+            color: var(--coral-pink);
+        }
+
+        .comparison-side.after h4 {
+            color: var(--lime-green);
+        }
+
+        .comparison-side p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* === OUTCOME BOXES === */
+        .outcome-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .outcome-box {
+            background: var(--teal-blue);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .outcome-box:nth-child(2) {
+            background: var(--lime-green);
+        }
+
+        .outcome-box:nth-child(3) {
+            background: var(--burnt-orange);
+        }
+
+        .outcome-box:nth-child(4) {
+            background: var(--coral-pink);
+        }
+
+        .outcome-box .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .outcome-box h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .outcome-box p {
+            font-size: 0.95rem;
+            margin: 0;
+            opacity: 0.95;
+        }
+
+        /* === BACK TO TOP === */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--teal-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(93, 159, 160, 0.4);
+            transition: all 0.3s;
+        }
+
+        .back-to-top:hover {
+            background: var(--burnt-orange);
+            transform: translateY(-4px);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 1200px) {
+            .side-nav {
+                display: none;
+            }
+
+            .case-study-content {
+                margin-left: auto;
+                max-width: 800px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
+            header nav {
+                padding: 0.75rem 1.5rem;
+            }
+
+            header nav h1 {
+                font-size: 1.25rem;
+            }
+
+            header nav ul {
+                gap: 1rem;
+                font-size: 0.875rem;
+            }
+
+            .case-study-hero {
+                min-height: 500px;
+                padding: 80px 1.5rem 3rem;
+            }
+
+            .hero-content {
+                padding: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.25rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .case-study-content {
+                padding: 3rem 1.5rem;
+            }
+
+            .content-section h2 {
+                font-size: 2rem;
+            }
+
+            .comparison-content {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-side.before {
+                border-right: none;
+                border-bottom: 3px solid var(--coral-pink);
+            }
+        }
+
+        /* === ANCHOR OFFSET === */
+        :target::before {
+            content: "";
+            display: block;
+            height: 100px;
+            margin-top: -100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="nav-content">
+                <h1><a href="about.html">aiman afzal arain</a></h1>
+                <ul>
+
+                    <li><a href="about.html">about</a></li>
+                    <li><a href="projects.html">projects</a></li>
+                    <li><a href="AimanAfzalArainDesignResume.pdf" target="_blank">resume</a></li>
+                    <li><a href="about.html#contact">contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Side Navigation -->
+    <aside class="side-nav">
+        <h3>CONTENTS</h3>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#deliverable">The Deliverable</a></li>
+            <li><a href="#problem">Problem & Context</a></li>
+            <li><a href="#research">Research & Discovery</a></li>
+            <li><a href="#ideation">Ideation & Concept</a></li>
+            <li><a href="#design-process">Design Process</a></li>
+            <li><a href="#prototyping">Prototyping & Iteration</a></li>
+            <li><a href="#community">Community Engagement</a></li>
+            <li><a href="#outcome">Final Outcome</a></li>
+            <li><a href="#reflection">Results & Reflections</a></li>
+            <li><a href="#next-steps">Next Steps</a></li>
+        </ul>
+    </aside>
+
+    <!-- Hero Section with Background Image -->
+    <section class="case-study-hero">
+        <div class="hero-content">
+            <div class="logo">🔍</div>
+            <h1>LENS BEYOND SURFACE</h1>
+            <p class="subtitle">Designing Ethical Storytelling Through AI & UX</p>
+            <p>A civic design partnership with Eater SF (Vox Media) exploring how visual design can reveal bias and reclaim authentic representation for LGBTQ+ communities in San Francisco.</p>
+            
+            <div class="case-study-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Role</div>
+                    <div class="meta-value">Product Designer & UX Researcher</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Duration</div>
+                    <div class="meta-value">Fall 2023 - Spring 2024</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Team</div>
+                    <div class="meta-value">5 Designers & Researchers</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Partner</div>
+                    <div class="meta-value">Eater SF (Vox Media)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="case-study-content">
+        <!-- TL;DR Section -->
+        <section id="overview" class="tldr-section">
+            <h2>📋 TL;DR — DESIGNING LENS BEYOND SURFACE</h2>
+            <p>Lens Beyond Surface is a civic partnership with <strong>Vox Media's Eater SF</strong> that explored how <strong>AI and UX design</strong> can reshape representation of marginalized communities. Through <strong>research, prototyping, and visual storytelling</strong>, our team designed an interactive concept that juxtaposes <strong>AI-generated and real portraits</strong> to expose bias and empower authentic storytelling.</p>
+            
+            <div class="tldr-highlights">
+                <div class="highlight-item">
+                    <div class="icon">🧩</div>
+                    <p>Conducted UX research & ethical design investigation on AI representation gaps</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="icon">🎨</div>
+                    <p>Prototyped a storytelling interface showing AI vs Real portraits</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="icon">🗣️</div>
+                    <p>Collaborated with Eater SF and SF AIDS Foundation on inclusive design</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="icon">🚀</div>
+                    <p>Presented at Minerva's Civic Symposium, sparking discussion on ethical AI</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Deliverable -->
+        <section id="deliverable" class="deliverable-box">
+            <h3>🎯 THE DELIVERABLE</h3>
+            <p>Our project deliverable was an <strong>interactive web prototype and storytelling framework</strong> that showcases AI-generated images versus authentic narratives. The platform uses <strong>personal stories and portraits</strong> to challenge stereotypes through a website featuring split-screen comparisons, bias explainers, and community resources. Presented at the <strong>Minerva LBS Civic Symposium 2024</strong>, this prototype demonstrates how design can expose AI bias while centering marginalized voices.</p>
+        </section>
+
+        <!-- Problem & Context -->
+        <section id="problem" class="content-section">
+            <h2>PROBLEM & CONTEXT</h2>
+            
+            <h3>The Challenge</h3>
+            <p>San Francisco is celebrated as a sanctuary for LGBTQ+ communities, yet despite this reputation, the city's LGBTQ+ residents—particularly those living with STDs—face persistent stigmatization in media narratives and healthcare settings. According to <em>Mission Local</em> (2023), <strong>87% of LGBTQ+ residents reported negative experiences</strong> within mainstream health care settings, including shaming, judgment, and inadequate care.</p>
+
+            <img src="lbs_images/LBSSymposiumPresentation/003.webp" alt="San Francisco - A Beacon of Inclusivity or is it?" class="case-study-image">
+            <p class="image-caption">Despite San Francisco's reputation, LGBTQ+ communities face significant challenges</p>
+
+            <h3>THE AI BIAS PROBLEM</h3>
+            <p>As AI-generated imagery becomes increasingly prevalent in media and journalism, these tools often amplify existing stereotypes rather than challenge them. When prompted with terms like "HIV," "gay man with STD," or "LGBTQ+ health," AI image generators like DALL-E and Craiyon produce distorted, harmful visual tropes that perpetuate stigma and misrepresentation.</p>
+
+            <img src="lbs_images/ai_bias_examples.png" alt="AI Bias Examples" class="case-study-image">
+            <p class="image-caption">AI-generated images showing harmful stereotypes and bias when prompted with LGBTQ+ health terms</p>
+
+            <div class="pull-quote">
+                <p>How might we design a platform that reclaims narrative control and visual dignity for LGBTQ+ San Franciscans by exposing bias and amplifying real voices?</p>
+            </div>
+
+            <h3>STAKEHOLDERS</h3>
+            <div class="insight-grid">
+                <div class="insight-box">
+                    <h4>Civic Partner</h4>
+                    <p>Paolo Bicchieri, Reporter at Eater SF (Vox Media)</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Community Partner</h4>
+                    <p>Baruch Porras Hernandez, SF AIDS Foundation (Strut)</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Target Users</h4>
+                    <p>LGBTQ+ individuals willing to share stories, and general audiences consuming online visual journalism</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research & Discovery -->
+        <section id="research" class="content-section">
+            <h2>Research & Discovery</h2>
+            
+            <h3>RESEARCH METHODS</h3>
+            <p>We employed a multi-faceted research approach to understand the problem space and identify opportunities for design intervention:</p>
+            
+            <div class="insight-grid">
+                <div class="insight-box">
+                    <h4>Qualitative Interviews</h4>
+                    <p>Conducted interviews with community members, journalists, and advocacy organizations to understand lived experiences and representation challenges.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>AI Bias Analysis</h4>
+                    <p>Tested multiple AI image generation tools with various prompts related to LGBTQ+ identity and health to document bias patterns.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Secondary Research</h4>
+                    <p>Reviewed academic literature on AI bias, counter-narration, and visual storytelling to ground our design in established theory.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Ethical Design Consultations</h4>
+                    <p>Collaborated with SF AIDS Foundation on inclusive design practices and community-centered approaches.</p>
+                </div>
+            </div>
+
+            <h3>KEY INSIGHTS</h3>
+            
+            <div class="insight-box" style="margin: 2rem 0;">
+                <h4>Insight 1: Bias in AI is Visible and Harmful</h4>
+                <p>AI tools consistently generated violent, distorted, or stereotypical images when prompted with LGBTQ+ health-related terms. These images reinforced harmful narratives of illness, isolation, and deviance.</p>
+            </div>
+
+            <div class="insight-box" style="margin: 2rem 0;">
+                <h4>Insight 2: People Crave Narrative Control</h4>
+                <p>Participants valued owning their story and being represented authentically, not through algorithmic interpretation. They wanted to challenge the "single story" that AI perpetuates.</p>
+            </div>
+
+            <div class="insight-box" style="margin: 2rem 0;">
+                <h4>Insight 3: Trust Grows Through Transparency</h4>
+                <p>Explaining AI limitations and bias mechanisms built empathy and understanding among test users. Transparency about how AI works was crucial for the platform's credibility.</p>
+            </div>
+
+            <div class="insight-box" style="margin: 2rem 0;">
+                <h4>Insight 4: Visual Comparison is Powerful</h4>
+                <p>Side-by-side comparisons of AI-generated vs. authentic portraits created immediate emotional impact and sparked critical thinking about representation.</p>
+            </div>
+
+            <img src="lbs_images/LBSSymposiumPresentation/008.webp" alt="Initial Deliverable Idea" class="case-study-image">
+            <p class="image-caption">Our initial deliverable concept: AI-generated vs. authentic storytelling</p>
+
+            <div class="pull-quote">
+                <p>The product must both reveal bias and enable human-centered storytelling—a dual experience of awareness and agency.</p>
+            </div>
+        </section>
+
+        <!-- Ideation & Concept Development -->
+        <section id="ideation" class="content-section">
+            <h2>IDEATION & CONCEPT DEVELOPMENT</h2>
+            
+            <h3>INITIAL IDEAS</h3>
+            <p>We explored multiple directions for the platform, each with different strengths and trade-offs:</p>
+            
+            <div class="comparison-box">
+                <div class="comparison-header">Concept Exploration</div>
+                <div class="comparison-content">
+                    <div class="comparison-side before">
+                        <h4>Educational Microsite</h4>
+                        <p><strong>Focus:</strong> Explaining how AI perpetuates stereotypes</p>
+                        <p><strong>Strength:</strong> Clear educational value</p>
+                        <p><strong>Limitation:</strong> Less emotional engagement</p>
+                    </div>
+                    <div class="comparison-side after">
+                        <h4>Visual Storytelling Blog</h4>
+                        <p><strong>Focus:</strong> Traditional article format with embedded images</p>
+                        <p><strong>Strength:</strong> Familiar format for journalism</p>
+                        <p><strong>Limitation:</strong> Limited interactivity</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>CHOSEN DIRECTION: INTERACTIVE STORYTELLING PLATFORM</h3>
+            <p>We selected the <strong>Interactive Storytelling Platform</strong> approach because it:</p>
+            
+            <div class="insight-grid">
+                <div class="insight-box">
+                    <h4>Combined Multiple Elements</h4>
+                    <p>Integrated UX storytelling, AI ethics, and visual interaction in a cohesive experience.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Aligned with Partner Goals</h4>
+                    <p>Matched Eater SF's journalistic approach to public education and engagement.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Created Immersive Experience</h4>
+                    <p>Fostered empathy and critical thinking through interactive elements.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Enabled Scalability</h4>
+                    <p>Modular design allowed for future expansion and adaptation.</p>
+                </div>
+            </div>
+
+            <h3>PLATFORM FEATURES</h3>
+            <p>The platform was designed around four core features:</p>
+            <ul style="font-size: 1.1rem; line-height: 1.8; color: #475569; margin-left: 2rem;">
+                <li><strong>Split-Screen Comparison:</strong> View AI-generated vs authentic portraits side-by-side</li>
+                <li><strong>First-Person Narratives:</strong> Read authentic stories about identity, stigma, and resilience</li>
+                <li><strong>Bias Explainers:</strong> Learn about the mechanisms behind AI bias</li>
+                <li><strong>Community Resources:</strong> Access support organizations and educational materials</li>
+            </ul>
+        </section>
+
+        <!-- Design Process -->
+        <section id="design-process" class="content-section">
+            <h2>Design Process</h2>
+            
+            <h3>Information Architecture</h3>
+            <p>The platform was structured around three main sections, each serving a specific purpose in the user journey:</p>
+            
+            <img src="wireframe_ia.png" alt="Information Architecture" class="case-study-image">
+            <p class="image-caption">Information architecture showing the platform's navigation structure</p>
+
+            <div class="insight-grid">
+                <div class="insight-box">
+                    <h4>Stories</h4>
+                    <p>Individual narratives and community context providing authentic perspectives from LGBTQ+ San Franciscans.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Compare</h4>
+                    <p>AI vs Real slider interaction with bias explainers showing the stark contrast between algorithmic representation and reality.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Learn</h4>
+                    <p>Educational content about AI bias and community resources for further engagement and support.</p>
+                </div>
+            </div>
+
+            <h3>USER FLOW</h3>
+            <p>The user journey was designed to create a progressive revelation experience that builds empathy and understanding:</p>
+            
+            <img src="wireframe_userflow.png" alt="User Flow" class="case-study-image">
+            <p class="image-caption">User flow showing the journey from bias exposure to education and action</p>
+
+            <p>The flow moves through three distinct phases:</p>
+            <div class="insight-grid">
+                <div class="insight-box" style="border-left-color: var(--coral-pink);">
+                    <h4 style="color: var(--coral-pink);">Phase 1: Exposure to Bias</h4>
+                    <p>Users first encounter AI-generated images and biased narratives, creating awareness of the problem.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Phase 2: Counter-Narration</h4>
+                    <p>Real photographs and authentic stories are revealed, challenging the AI-generated stereotypes.</p>
+                </div>
+                <div class="insight-box" style="border-left-color: var(--teal-blue);">
+                    <h4 style="color: var(--teal-blue);">Phase 3: Education & Action</h4>
+                    <p>Users explore resources, learn about AI bias mechanisms, and can take action or share stories.</p>
+                </div>
+            </div>
+
+            <h3>UI LAYOUT WIREFRAME</h3>
+            <img src="wireframe_layout.png" alt="UI Layout Wireframe" class="case-study-image">
+            <p class="image-caption">Desktop wireframe showing the split-screen comparison interface</p>
+        </section>
+
+        <!-- Prototyping & Iteration -->
+        <section id="prototyping" class="content-section">
+            <h2>PROTOTYPING & ITERATION</h2>
+            
+            <h3>EARLY PROTOTYPE DEVELOPMENT</h3>
+            <p>Our journey into prototyping began in November 2023, marking our initial exploration into leveraging AI technology. During this phase, we encountered the inherent limitations of AI-generated content and conducted thorough investigation into viable solutions.</p>
+
+            <img src="lbs_images/Prototype/005.webp" alt="Early Prototype Iteration" class="case-study-image">
+            <p class="image-caption">Early prototype showing initial AI bias testing and concept development</p>
+
+            <h3>MID-FIDELITY PROTOTYPE</h3>
+            <p>We developed interactive prototypes with key features including compare slider interaction (AI vs Real), pop-up explanations, "Learn More" cards linking to community resources, and comprehensive accessibility features.</p>
+
+            <img src="lbs_images/prototype_final.png" alt="Final Prototype" class="case-study-image">
+            <p class="image-caption">Final prototype showing the split-screen comparison: AI-generated image (top) vs real portrait (bottom) with authentic personal narrative</p>
+            
+            <img src="lbs_images/christopher_final_prototype.png" alt="Christopher's Story - Final Prototype" class="case-study-image" style="margin-top: 2rem;">
+            <p class="image-caption">Christopher, 22, shares his experience with Herpes: "I felt like my life was over" — demonstrating how the platform centers authentic voices and challenges AI-generated stereotypes</p>
+
+            <h3>USER TESTING</h3>
+            <p>We conducted feedback sessions with journalists, faculty, and volunteers from Strut SF (SF AIDS Foundation). The testing revealed important insights about emotional impact, clarity, and accessibility.</p>
+
+            <h3>KEY CHANGES FROM TESTING</h3>
+            
+            <div class="comparison-box">
+                <div class="comparison-header">Before & After: Iteration Based on Feedback</div>
+                <div class="comparison-content">
+                    <div class="comparison-side before">
+                        <h4>Before</h4>
+                        <p><strong>Emotional Load:</strong> Stark, confrontational presentation of AI bias</p>
+                        <p><strong>CTA:</strong> "See the Truth" (felt judgmental)</p>
+                        <p><strong>Layout:</strong> Side-by-side layout only</p>
+                        <p><strong>Context:</strong> Images without explanation</p>
+                    </div>
+                    <div class="comparison-side after">
+                        <h4>After</h4>
+                        <p><strong>Emotional Load:</strong> Softened prompts with content warnings for emotional safety</p>
+                        <p><strong>CTA:</strong> "Explore Perspectives" (more inviting and empathetic)</p>
+                        <p><strong>Layout:</strong> Vertical stacking for mobile with clear visual separation</p>
+                        <p><strong>Context:</strong> Bias explainers and educational pop-ups</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pull-quote">
+                <p>Users reported feeling informed, not overwhelmed, and said they would trust this platform more than AI-generated media.</p>
+            </div>
+        </section>
+
+        <!-- Community Engagement -->
+        <section id="community" class="content-section">
+            <h2>COMMUNITY ENGAGEMENT</h2>
+            
+            <h3>RECRUITMENT CHALLENGES</h3>
+            <p>Recruiting participants for such a sensitive topic proved challenging. We employed multiple strategies to build trust and reach potential participants:</p>
+            
+            <img src="lbs_images/recruiting_participants.png" alt="Recruiting Participants" class="case-study-image">
+            <p class="image-caption">Community outreach strategies: partnerships with SF AIDS Foundation, Gay Men's Chorus, STD-related organizations, financial incentives, and leafleting</p>
+
+            <div class="insight-grid">
+                <div class="insight-box">
+                    <h4>Partnership Building</h4>
+                    <p>Collaborated with SF AIDS Foundation's Strut program to access trusted community networks.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Community Outreach</h4>
+                    <p>Created flyers with QR codes and distributed them in Castro district and LGBTQ+ community centers.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Incentives</h4>
+                    <p>Offered $20 Amazon gift cards to acknowledge participants' time and emotional labor.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Trust Building</h4>
+                    <p>Emphasized project goals, data protection, and community benefit in all communications.</p>
+                </div>
+            </div>
+
+            <h3>ETHICAL CONSIDERATIONS</h3>
+            <p>We prioritized ethical research practices throughout the project:</p>
+            <ul style="font-size: 1.1rem; line-height: 1.8; color: #475569; margin-left: 2rem;">
+                <li><strong>IRB Exempt Status:</strong> Ensured ethical research practices and participant protection</li>
+                <li><strong>Informed Consent:</strong> Clear explanation of project goals, data use, and participant rights</li>
+                <li><strong>Right to Withdraw:</strong> Participants could exit at any time without penalty</li>
+                <li><strong>Privacy Protection:</strong> Alternative names and careful photo permissions</li>
+                <li><strong>Sensitive Language:</strong> Inclusive, respectful terminology throughout all materials</li>
+            </ul>
+            
+            <h3>PARTICIPANT STORIES</h3>
+            <p>Through our recruitment efforts, we successfully connected with participants who shared powerful personal narratives. Their stories became the heart of our platform:</p>
+            
+            <img src="lbs_images/drew_participant_response.png" alt="Drew's Story - Participant Response" class="case-study-image">
+            <p class="image-caption">Drew, 30, shares his experience with syphilis diagnosis and the harmful AI-generated representations that perpetuate stigma</p>
+            
+            <div class="pull-quote">
+                <p>"That is not... I don't believe that's possible with gonorrhea. That seems like someone with hyperpigmentation on their face. I don't know why AI did that." — Drew, reflecting on AI-generated imagery</p>
+            </div>
+        </section>
+
+        <!-- Final Outcome -->
+        <section id="outcome" class="content-section">
+            <h2>FINAL OUTCOME</h2>
+            
+            <h3>DELIVERABLE</h3>
+            <p>An interactive web prototype and storytelling framework. The platform successfully demonstrated how design can challenge AI bias and center marginalized voices.</p>
+            
+            <div style="margin: 3rem 0; padding: 2rem; background: #f8f9fa; border-radius: 12px; border-left: 6px solid #DC6327;">
+                <h4 style="color: #DC6327; margin-top: 0;">📄 Read the Full Article</h4>
+                <p style="margin-bottom: 1.5rem;">Explore the complete story of Lens Beyond Surface, including detailed participant narratives, research findings, and design insights.</p>
+                <iframe src="https://aimanportfolio.notion.site/From-AI-to-Real-Voices-LGBTQ-Sexual-Health-in-San-Francisco-28f30f6ba5538178925cd521eb85e6c5" 
+                        style="width: 100%; height: 600px; border: 2px solid #ddd; border-radius: 8px; margin-top: 1rem;"
+                        title="Lens Beyond Surface - Full Article">
+                </iframe>
+                <p style="margin-top: 1rem; text-align: center;">
+                    <a href="https://aimanportfolio.notion.site/From-AI-to-Real-Voices-LGBTQ-Sexual-Health-in-San-Francisco-28f30f6ba5538178925cd521eb85e6c5" 
+                       target="_blank" 
+                       style="color: #DC6327; text-decoration: underline; font-weight: 600;">
+                        Open in new tab →
+                    </a>
+                </p>
+            </div>
+
+            <h3>PLATFORM FEATURES</h3>
+            <div class="insight-grid">
+                <div class="insight-box">
+                    <h4>Real User Narratives</h4>
+                    <p>Authentic stories paired with photographs, centering lived experiences over algorithmic representation.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>AI Comparison</h4>
+                    <p>Side-by-side view of AI-generated vs. real images, creating immediate visual impact.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Hover-Based Insights</h4>
+                    <p>Educational explanations on demand, allowing users to learn at their own pace.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Modular Design</h4>
+                    <p>Scalable framework for future expansion and adaptation to other communities.</p>
+                </div>
+            </div>
+
+            <h3>Impact</h3>
+            <img src="lbs_images/impact_bars.png" alt="Project Impact" class="case-study-image">
+            <p class="image-caption">Project impact: Increased awareness, fostered collaboration, inspired future work, and created educational resources</p>
+
+
+        </section>
+
+        <!-- Results & Reflections -->
+        <section id="reflection" class="content-section">
+            <h2>RESULTS & REFLECTIONS</h2>
+            
+            <h3>KEY OUTCOMES</h3>
+            <div class="insight-grid">
+                <div class="insight-box">
+                    <h4>Centered Marginalized Voices</h4>
+                    <p>Platform brought attention to underrepresented voices through UX-driven storytelling, challenging dominant narratives.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Reframed AI Bias</h4>
+                    <p>Shifted conversation from data problem to design accountability, emphasizing designer responsibility.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Design as Advocacy</h4>
+                    <p>Demonstrated how empathy-driven interface design can challenge harmful narratives and create social impact.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Created Scalable Framework</h4>
+                    <p>Modular design allows for future expansion and adaptation to other marginalized communities.</p>
+                </div>
+            </div>
+
+            <div class="pull-quote">
+                <p>This project reshaped how I define UX—it's not just usability; it's accountability. Design can challenge narratives, not just beautify them.</p>
+            </div>
+
+            <h3>WHAT I LEARNED</h3>
+            <div class="comparison-box">
+                <div class="comparison-header">Key Learnings</div>
+                <div class="comparison-content">
+                    <div class="comparison-side before">
+                        <h4>Process Learnings</h4>
+                        <p><strong>Ethical Design Requires Collaboration:</strong> Working with community partners was essential for authentic representation</p>
+                        <p><strong>Transparency Builds Trust:</strong> Explaining AI limitations helped users understand and engage critically</p>
+                    </div>
+                    <div class="comparison-side after">
+                        <h4>Design Learnings</h4>
+                        <p><strong>Design Can Be Advocacy:</strong> Visual storytelling has the power to challenge systemic bias</p>
+                        <p><strong>Iteration is Essential:</strong> User feedback transformed the project from confrontational to empathetic</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Steps -->
+        <section id="next-steps" class="content-section">
+            <h2>NEXT STEPS</h2>
+            
+            <h3>FUTURE ENHANCEMENTS</h3>
+            <div class="insight-grid">
+                <div class="insight-box">
+                    <h4>Expand Story Collection</h4>
+                    <p>Recruit more participants and diversify narratives to represent broader LGBTQ+ experiences.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Public Launch</h4>
+                    <p>Refine prototype for public hosting with full accessibility compliance and performance optimization.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Eater SF Integration</h4>
+                    <p>Explore integration with Eater SF editorial formats for wider reach and impact.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>Educational Toolkit</h4>
+                    <p>Develop resources for educators and journalists to use in AI ethics discussions.</p>
+                </div>
+            </div>
+
+            <h3>POTENTIAL Impact</h3>
+            <ul style="font-size: 1.1rem; line-height: 1.8; color: #475569; margin-left: 2rem;">
+                <li><strong>Media Literacy:</strong> Help audiences critically evaluate AI-generated content</li>
+                <li><strong>Journalism Ethics:</strong> Influence how media organizations approach AI in visual storytelling</li>
+                <li><strong>Community Empowerment:</strong> Provide platform for marginalized voices to reclaim narratives</li>
+                <li><strong>Policy Influence:</strong> Contribute to conversations about AI regulation and ethical guidelines</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top">↑</a>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        const sections = document.querySelectorAll('.content-section');
+        const navLinks = document.querySelectorAll('.side-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Show/hide back to top button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Aiman - Product Designer</title>
+    <link rel="stylesheet" href="style_final.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Aiman Afzal Arain</div>
+            <ul>
+
+                <li><a href="about.html">about</a></li>
+                <li><a href="projects.html">projects</a></li>
+                <li><a href="AimanAfzalArainDesignResume.pdf" target="_blank">resume</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Header with Salta Image -->
+    <section class="about-hero">
+        <div class="hero-image-container">
+            <img src="images/personal/cafayate_argentina.png" alt="Cafayate, Argentina" class="hero-bg-image">
+            <div class="hero-overlay"></div>
+            <h1 class="hero-title">About Aiman</h1>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-layout">
+                <div class="about-text-column">
+                    <h2>Hi, I'm Aiman!</h2>
+                    <p>I'm a product designer studying computational science and arts & humanities at Minerva University. My journey spans across 7 global cities, where I've learned to design for diverse users and contexts.</p>
+                    
+                    <p>My approach combines user research, data analysis, and visual design to solve complex problems. I believe great design is invisible—it just works.</p>
+                    
+                    <p>When I'm not designing, you'll find me exploring new cities, experimenting with AI tools, or building handcrafted journals through my brand, The Vintage Flair.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">design projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">user interviews</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">7</div>
+                            <div class="stat-label">global cities</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">80%</div>
+                            <div class="stat-label">workload reduction</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">+35%</div>
+                            <div class="stat-label">YoY revenue growth</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">68%</div>
+                            <div class="stat-label">user satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="photo-column">
+                    <div class="photo-item">
+                        <img src="images/personal/san_francisco.png" alt="San Francisco">
+                        <p class="photo-caption">San Francisco, USA</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="images/personal/namsan_tower_seoul.png" alt="Seoul">
+                        <p class="photo-caption">Seoul, South Korea</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="images/personal/green_island_taiwan.png" alt="Taiwan">
+                        <p class="photo-caption">Green Island, Taiwan</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="images/personal/fairy_meadows_pakistan.png" alt="Pakistan">
+                        <p class="photo-caption">Fairy Meadows, Pakistan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>My Global Journey</h2>
+            <div class="map-container">
+                <svg viewBox="0 0 1200 600" class="world-map">
+                    <!-- Simplified world map paths -->
+                    <path d="M 150 150 L 350 120 L 450 180 L 400 250 L 300 280 L 200 240 Z" fill="#E8B17A" opacity="0.6" />
+                    <path d="M 450 100 L 650 90 L 750 150 L 700 220 L 600 250 L 500 200 Z" fill="#E8B17A" opacity="0.6" />
+                    <path d="M 750 120 L 950 100 L 1050 160 L 1000 230 L 900 260 L 800 210 Z" fill="#E8B17A" opacity="0.6" />
+                    <path d="M 200 300 L 350 280 L 400 350 L 350 420 L 250 440 L 180 380 Z" fill="#E8B17A" opacity="0.6" />
+                    <path d="M 100 400 L 200 380 L 250 450 L 200 520 L 120 540 L 80 480 Z" fill="#E8B17A" opacity="0.6" />
+                    
+                    <!-- Location pins -->
+                    <!-- Pakistan -->
+                    <g class="location-pin" data-location="pakistan">
+                        <circle cx="700" cy="200" r="30" fill="#FF6B9D" opacity="0.9"/>
+                        <image href="images/personal/nanga_parbat_basecamp.png" x="670" y="170" width="60" height="60" clip-path="circle(30px at 30px 30px)"/>
+                        <circle cx="700" cy="200" r="30" fill="none" stroke="#FF6B9D" stroke-width="3"/>
+                    </g>
+                    
+                    <!-- Argentina -->
+                    <g class="location-pin" data-location="argentina">
+                        <circle cx="300" cy="500" r="30" fill="#FF6B9D" opacity="0.9"/>
+                        <image href="images/personal/cafayate_argentina.png" x="270" y="470" width="60" height="60" clip-path="circle(30px at 30px 30px)"/>
+                        <circle cx="300" cy="500" r="30" fill="none" stroke="#FF6B9D" stroke-width="3"/>
+                    </g>
+                    
+                    <!-- San Francisco -->
+                    <g class="location-pin" data-location="san-francisco">
+                        <circle cx="150" cy="220" r="30" fill="#FF6B9D" opacity="0.9"/>
+                        <image href="images/personal/golden_gate_cycling.png" x="120" y="190" width="60" height="60" clip-path="circle(30px at 30px 30px)"/>
+                        <circle cx="150" cy="220" r="30" fill="none" stroke="#FF6B9D" stroke-width="3"/>
+                    </g>
+                    
+                    <!-- Taiwan -->
+                    <g class="location-pin" data-location="taiwan">
+                        <circle cx="900" cy="250" r="30" fill="#FF6B9D" opacity="0.9"/>
+                        <image href="images/personal/green_island_taiwan.png" x="870" y="220" width="60" height="60" clip-path="circle(30px at 30px 30px)"/>
+                        <circle cx="900" cy="250" r="30" fill="none" stroke="#FF6B9D" stroke-width="3"/>
+                    </g>
+                    
+                    <!-- Seoul -->
+                    <g class="location-pin" data-location="seoul">
+                        <circle cx="950" cy="200" r="30" fill="#FF6B9D" opacity="0.9"/>
+                        <image href="images/personal/namsan_tower_seoul.png" x="920" y="170" width="60" height="60" clip-path="circle(30px at 30px 30px)"/>
+                        <circle cx="950" cy="200" r="30" fill="none" stroke="#FF6B9D" stroke-width="3"/>
+                    </g>
+                </svg>
+                
+                <!-- Location descriptions -->
+                <div class="location-descriptions">
+                    <div class="location-desc" data-location="pakistan">
+                        <h3>🇵🇰 Pakistan</h3>
+                        <p>My home country where I grew up and started my entrepreneurial journey with The Vintage Flair.</p>
+                    </div>
+                    <div class="location-desc" data-location="argentina">
+                        <h3>🇦🇷 Buenos Aires, Argentina</h3>
+                        <p>Designed TECHO's first online store and immersed myself in Latin American culture and social impact work.</p>
+                    </div>
+                    <div class="location-desc" data-location="san-francisco">
+                        <h3>🇺🇸 San Francisco, USA</h3>
+                        <p>Studied at Minerva University, worked on AI bias research, and explored the tech startup ecosystem.</p>
+                    </div>
+                    <div class="location-desc" data-location="taiwan">
+                        <h3>🇹🇼 Taiwan</h3>
+                        <p>Currently studying and exploring the vibrant design and technology scene in East Asia.</p>
+                    </div>
+                    <div class="location-desc" data-location="seoul">
+                        <h3>🇰🇷 Seoul, South Korea</h3>
+                        <p>Experiencing Korean design culture and expanding my global perspective on user experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="featured-projects-section">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="featured-projects-grid">
+                <!-- Futre Project -->
+                <div class="featured-project-card">
+                    <div class="project-image">
+                        <img src="futre_screenshot1.png" alt="Futre: AI-Powered Career Exploration Platform">
+                    </div>
+                    <div class="project-info">
+                        <h3>Futre: AI-Powered Career Exploration</h3>
+                        <p>Designed an intelligent platform that helps students discover, compare, and plan for 800+ careers through clear data visualization, personalized recommendations, and engaging visuals.</p>
+                        <div class="project-tags">
+                            <span class="tag">product design</span>
+                            <span class="tag">ui/ux</span>
+                            <span class="tag">ai integration</span>
+                        </div>
+                        <a href="futre_case_study.html" class="project-link">view case study →</a>
+                    </div>
+                </div>
+                
+                <!-- BearVFX Project -->
+                <div class="featured-project-card">
+                    <div class="project-image">
+                        <img src="bearvfx_wireframe_dashboard.png" alt="BearEdvance: AI-Powered EdTech Platform">
+                    </div>
+                    <div class="project-info">
+                        <h3>BearEdvance: AI-Powered EdTech Platform</h3>
+                        <p>Led the design of an end-to-end automated platform that transforms topic inputs into professional educational videos, reducing educator workload by 80%.</p>
+                        <div class="project-tags">
+                            <span class="tag">product design</span>
+                            <span class="tag">ai/ml</span>
+                            <span class="tag">edtech</span>
+                        </div>
+                        <a href="bearvfx_case_study.html" class="project-link">view case study →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Let's Work Together</h2>
+            <p class="contact-description">I'm currently seeking product design and UI/UX internships for summer 2026. If you're looking for a designer who combines creativity with data-driven decision making, let's chat!</p>
+            <div class="contact-buttons">
+                <a href="mailto:afzal@uni.minerva.edu" class="btn btn-primary">send me an email</a>
+                <a href="AimanAfzalArainDesignResume.pdf" target="_blank" class="btn btn-secondary">view resume</a>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link">linkedin</a>
+                <a href="#" class="social-link">behance</a>
+                <a href="#" class="social-link">github</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Aiman Afzal Arain. Designed and coded with care.</p>
+        </div>
+    </footer>
+
+    <script src="script_final.js"></script>
+    <style>
+        /* Featured Projects Section */
+        .featured-projects-section {
+            padding: 6rem 0;
+            background: #f8f9fa;
+        }
+        
+        .featured-projects-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .featured-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .featured-project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .featured-project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            background: #e8e8e8;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .project-info {
+            padding: 2rem;
+        }
+        
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .project-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tag {
+            background: #e8f4f8;
+            color: #0066cc;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .project-link {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+        
+        .project-link:hover {
+            color: #004999;
+        }
+    </style>
+</body>
+</html>
+

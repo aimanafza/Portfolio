@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BearEdvance: AI-Powered EdTech Platform | CASE STUDY</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* BearVFX Case Study Specific Styles */
+        
+        /* Header Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 100%;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #D97706;
+            letter-spacing: -0.5px;
+        }
+        
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header nav ul li a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        header nav ul li a:hover {
+            color: #D97706;
+        }
+        
+        /* Reset and Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding-top: 90px;
+        }
+        
+        /* Hero Section - Solid Orange/Gold with Centered Info Box */
+        .case-study-hero {
+            background-color: #D97706; /* Solid orange/gold matching BearVFX logo */
+            color: white;
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+        }
+        
+        .hero-content {
+            background: rgba(255, 255, 255, 0.97);
+            padding: 3rem 4rem;
+            border-radius: 16px;
+            max-width: 900px;
+            color: #333;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: #D97706;
+            text-transform: uppercase;
+        }
+        
+        .hero-content .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            color: #555;
+        }
+        
+        .case-study-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            text-align: center;
+        }
+        
+        .meta-label {
+            font-size: 0.8rem;
+            color: #D97706;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .meta-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* Wireframe Grid */
+        .wireframe-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .wireframe-container {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+        }
+        
+        .wireframe-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+        
+        .wireframe-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #D97706;
+            margin-bottom: 0.5rem;
+        }
+        
+        .wireframe-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+        
+        /* Main Content Area */
+        .case-study-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        /* Section Headings */
+        .section-heading {
+            color: #D97706;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 4rem 0 2rem;
+            text-transform: uppercase;
+        }
+        
+        .section-subheading {
+            color: #B45309;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 3rem 0 1.5rem;
+            text-transform: uppercase;
+        }
+        
+        /* Content Cards */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .content-card {
+            background: white;
+            border: 2px solid #F59E0B;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.2);
+        }
+        
+        .content-card h3 {
+            color: #D97706;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .content-card p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        .content-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .content-card ul li {
+            color: #555;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.7;
+        }
+        
+        .content-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #D97706;
+            font-weight: bold;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: #FEF3C7;
+            border-left: 5px solid #D97706;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .highlight-box p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        
+        .highlight-box strong {
+            color: #D97706;
+            font-weight: 700;
+        }
+        
+        /* Images */
+        .full-width-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        
+        .image-caption {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+        
+        /* Wireframe Images */
+        .wireframe-image-container {
+            margin: 3rem 0;
+            background: #FEF3C7;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        .wireframe-image-container img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .wireframe-caption {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #78350F;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .wireframe-description {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            color: #666;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #D97706;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #78350F;
+            font-weight: 600;
+        }
+        
+        /* Partner Logos */
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .partner-logo {
+            height: 60px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            opacity: 1;
+        }
+        
+        /* Wireframe Styles */
+        .wireframe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .wireframe-item {
+            text-align: center;
+        }
+        
+        .wireframe-placeholder {
+            background: #FEF3C7;
+            border: 3px solid #F59E0B;
+            border-radius: 12px;
+            padding: 3rem;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .wireframe-label {
+            font-weight: 600;
+            color: #D97706;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        /* Video Container */
+        .video-container {
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 2rem 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 2rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-heading {
+                font-size: 2rem;
+            }
+            
+            .case-study-content {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <div class="logo">aiman afzal arain</div>
+            <ul>
+                <li><a href="about.html">about</a></li>
+                <li><a href="projects.html">projects</a></li>
+                <li><a href="AimanAfzalArainDesignResume.pdf" target="_blank">resume</a></li>
+                <li><a href="about.html#contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="case-study-hero">
+        <div class="hero-content">
+            <h1>BearEdvance: AI-Powered EdTech Platform</h1>
+            <p class="subtitle">Designing an intelligent platform that automates educational video creation, reducing educator workload by 80%</p>
+            
+            <div class="case-study-meta">
+                <div class="meta-item">
+                    <div class="meta-label">ROLE</div>
+                    <div class="meta-value">Product Design Manager</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">DURATION</div>
+                    <div class="meta-value">September 2024 - December 2024</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">TEAM</div>
+                    <div class="meta-value">5 Members (Design, Engineering, AI/ML)</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">PARTNER</div>
+                    <div class="meta-value">BearVFX & Microsoft</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="case-study-content">
+        <section id="overview">
+            <h2 class="section-heading">Project Overview</h2>
+            
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #555; margin: 2rem 0; text-align: center;">BearEdvance is an AI-powered educational technology platform that revolutionizes how educators create video content. By leveraging cutting-edge AI technologies including OpenAI's GPT for script generation, Microsoft Azure's text-to-speech services, and Wav2Lip for realistic video synthesis, the platform transforms a simple topic input into a complete educational video in under 5 minutes.</p>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>The Challenge</h3>
+                    <p>Educators spend 4-6 hours creating a single lecture video, involving scriptwriting, slide design, recording, and editing. This time-intensive process limits content creation and prevents educators from focusing on direct student interaction and personalized teaching.</p>
+                </div>
+                <div class="content-card">
+                    <h3>My Solution</h3>
+                    <p>As Product Design Manager, I led the design of an end-to-end automated platform that takes a topic input and generates professional educational videos through an AI pipeline. The interface prioritizes simplicity and transparency, making complex AI accessible to non-technical educators.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Impact</h3>
+                    <p>The platform reduced video creation time from 4-6 hours to 5 minutes (80% workload reduction), improved task completion rates by 22%, and enabled educators to produce 10x more content while maintaining quality and pedagogical effectiveness.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="role">
+            <h2 class="section-heading">My Role & RESPONSIBILITIES</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">As Product Design Manager, I led a cross-functional team of 5 members through the entire product development lifecycle, from initial research to final prototype delivery. My responsibilities spanned design leadership, user research, product design, and cross-functional collaboration.</p>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>DESIGN LEADERSHIP</h3>
+                    <ul>
+                        <li>Defined product vision and design roadmap</li>
+                        <li>Led design strategy and decision-making</li>
+                        <li>Managed design team and coordinated with stakeholders</li>
+                        <li>Presented design rationale to BearVFX and Microsoft partners</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3>USER RESEARCH</h3>
+                    <ul>
+                        <li>Conducted interviews with 15+ educators across disciplines</li>
+                        <li>Observed video creation workflows in real teaching environments</li>
+                        <li>Synthesized insights into actionable design requirements</li>
+                        <li>Facilitated usability testing sessions with pilot users</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3>PRODUCT DESIGN</h3>
+                    <ul>
+                        <li>Designed end-to-end user flows and wireframes</li>
+                        <li>Created high-fidelity prototypes in Figma</li>
+                        <li>Developed design system and component library</li>
+                        <li>Collaborated with engineers on implementation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="partners">
+            <h2 class="section-heading">Project Partners</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0; text-align: center;">This project was developed in partnership with industry leaders in technology and AI, enabling us to leverage cutting-edge tools and infrastructure.</p>
+            
+            <div class="partner-logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" class="partner-logo" style="height: 50px;">
+            </div>
+            
+            <div class="highlight-box">
+                <p><strong>Microsoft Partnership:</strong> We integrated Microsoft Azure AI services to power the platform's text-to-speech capabilities, ensuring high-quality, natural-sounding narration across multiple languages and voice profiles. Azure's Speech5_tts model provided the foundation for our audio synthesis pipeline.</p>
+            </div>
+            
+            <div class="highlight-box">
+                <p><strong>BearVFX Collaboration:</strong> Partnered with BearVFX, a Taiwan-based visual effects and AI research company, to implement Wav2Lip technology for realistic lip-sync video generation. This collaboration enabled us to create engaging, human-like educational videos at scale.</p>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2 class="section-heading">Research & Discovery</h2>
+            
+            <h3 class="section-subheading">UNDERSTANDING EDUCATOR PAIN POINTS</h3>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">Through interviews with 15+ educators and observation of their video creation workflows, I identified critical pain points that informed our design strategy. Educators consistently reported spending 4-6 hours per video on tasks that could be automated.</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>TIME CONSTRAINTS</h3>
+                    <ul>
+                        <li>Scriptwriting takes 1-2 hours per video</li>
+                        <li>Slide design requires 1-1.5 hours</li>
+                        <li>Recording and re-recording takes 1-2 hours</li>
+                        <li>Editing and post-production adds 1-1.5 hours</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3>TECHNICAL BARRIERS</h3>
+                    <ul>
+                        <li>Steep learning curve for video editing software</li>
+                        <li>Expensive equipment and software licenses</li>
+                        <li>Lack of design skills for professional-looking slides</li>
+                        <li>Difficulty maintaining consistency across videos</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3>CONTENT CHALLENGES</h3>
+                    <ul>
+                        <li>Difficulty structuring complex topics for video format</li>
+                        <li>Struggle to balance depth and accessibility</li>
+                        <li>Need for multiple iterations to get tone right</li>
+                        <li>Limited ability to personalize for different audiences</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <p><strong>Key Insight:</strong> Educators don't want to become video producers—they want to focus on teaching. The ideal solution would automate the technical aspects of video creation while preserving pedagogical control and content quality.</p>
+            </div>
+        </section>
+
+        <section id="technical">
+            <h2 class="section-heading">Technical Workflow & AI PIPELINE</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">One of my key design challenges was making a complex AI pipeline feel simple and trustworthy. The platform orchestrates multiple AI services in sequence, and I designed the interface to provide transparency at each step while hiding unnecessary technical complexity.</p>
+            
+            <h3 class="section-subheading">The 4-Step AI Pipeline</h3>
+            
+            <div class="wireframe-grid">
+                <div class="wireframe-item">
+                    <div class="wireframe-placeholder">📝</div>
+                    <p class="wireframe-label">Step 1: Topic Input</p>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Educator enters topic and selects content type</p>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-placeholder">🤖</div>
+                    <p class="wireframe-label">Step 2: Script Generation</p>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">OpenAI GPT-3.5 generates educational script</p>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-placeholder">🎙️</div>
+                    <p class="wireframe-label">Step 3: Audio Synthesis</p>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Microsoft Azure TTS converts to narration</p>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-placeholder">🎬</div>
+                    <p class="wireframe-label">Step 4: Video Assembly</p>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Wav2Lip creates lip-synced video</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <p><strong>Design Decision:</strong> I designed a transparent progress dashboard that shows each pipeline step in real-time. This builds trust by demystifying the AI process and manages expectations during the 2-3 minute generation time. Users see exactly what's happening at each stage.</p>
+            </div>
+            
+            <h3 class="section-subheading">Demo: Generated Video Output</h3>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">Below is an actual video generated by our platform. The educator simply input a topic, selected a presenter character, and the AI pipeline handled the rest—generating the script, synthesizing the audio, and creating the lip-synced video. Total time: 4 minutes 32 seconds.</p>
+            
+            <div class="video-container">
+                <video controls>
+                    <source src="bearvfx/bearvfx_demo_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="image-caption">Example video generated by BearEdvance: Topic input → AI-generated script → Microsoft TTS audio → Wav2Lip video synthesis</p>
+        </section>
+
+        <section id="design">
+            <h2 class="section-heading">Design Process</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">I led the design process from initial wireframes to high-fidelity prototypes, conducting iterative usability testing at each stage. The goal was to create an interface so intuitive that educators could generate their first video without any training.</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>LOW-FIDELITY WIREFRAMES</h3>
+                    <p>Created low-fidelity wireframes to map out the user journey. Prioritized simplicity and clarity, ensuring educators could generate videos in under 5 minutes without technical expertise.</p>
+                </div>
+                <div class="content-card">
+                    <h3>HIGH-FIDELITY UI DESIGN</h3>
+                    <p>Designed polished UI screens in Figma, incorporating feedback from usability tests. Developed a design system with reusable components for consistency across the platform.</p>
+                </div>
+                <div class="content-card">
+                    <h3>INTERACTIVE PROTOTYPE</h3>
+                    <p>Collaborated with engineers to build an interactive prototype using Python, integrating OpenAI API, Microsoft Azure TTS, and Wav2Lip. Conducted iterative usability testing to refine the experience.</p>
+                </div>
+                <div class="content-card">
+                    <h3>PILOT TESTING</h3>
+                    <p>Tested the prototype with educators in real teaching workflows. Measured an 80% reduction in video creation time and 22% improvement in task completion rates.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="wireframes">
+            <h2 class="section-heading">Figma Wireframes & UI Design</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0; text-align: center;">Below are the complete set of wireframes I designed in Figma, covering the entire user journey from authentication to content creation and discovery. Each wireframe demonstrates thoughtful information architecture, user-centered design, and attention to interaction patterns.</p>
+            
+            <!-- Wireframe 1: Dashboard -->
+            <div class="wireframe-image-container">
+                <img src="bearvfx/bearvfx_wireframe_dashboard.png" alt="BearEdvance Dashboard Wireframe">
+                <p class="wireframe-caption">Dashboard: Central Hub for Educators</p>
+                <p class="wireframe-description">The dashboard serves as the central hub, providing quick access to courses, progress tracking, AI video creation, and notifications. Clear navigation and information hierarchy enable educators to efficiently manage their teaching activities.</p>
+            </div>
+            
+            <!-- Wireframe 2: AI Video Creation -->
+            <div class="wireframe-image-container">
+                <img src="bearvfx/bearvfx_wireframe_video_creation.png" alt="BearEdvance AI Video Creation Interface">
+                <p class="wireframe-caption">AI Video Creation Interface: Simplified Multi-Step Workflow</p>
+                <p class="wireframe-description">The video creation interface breaks down the complex AI pipeline into manageable steps: script input, AI voice selection, visual asset upload, and preview. This step-by-step approach guides educators through the process while providing transparency and control.</p>
+            </div>
+            
+            <!-- Wireframe 3: Course Content Page -->
+            <div class="wireframe-image-container">
+                <img src="bearvfx/bearvfx_wireframe_course_page.png" alt="BearEdvance Course Content Page">
+                <p class="wireframe-caption">Course Content Page: Content-First Layout</p>
+                <p class="wireframe-description">The course page prioritizes video content with a large player, while providing contextual information through lesson lists, course descriptions, and comment sections. This layout supports both content consumption and community engagement.</p>
+            </div>
+            
+            <!-- Wireframe 4: Course Discovery -->
+            <div class="wireframe-image-container">
+                <img src="bearvfx/bearvfx_wireframe_course_discovery.png" alt="BearEdvance Course Discovery Page">
+                <p class="wireframe-caption">Course Discovery: Search and Browse Experience</p>
+                <p class="wireframe-description">The discovery page features prominent search functionality and category filters, allowing educators to efficiently find relevant courses. The grid layout provides visual browsing while maintaining information density and scalability.</p>
+            </div>
+            
+            <!-- Wireframe 5: Login/Signup -->
+            <div class="wireframe-image-container">
+                <img src="bearvfx/bearvfx_wireframe_login.png" alt="BearEdvance Login and Signup">
+                <p class="wireframe-caption">Authentication: Streamlined Login & Signup</p>
+                <p class="wireframe-description">The authentication screen offers multiple login options (email/password, Google, Apple, Facebook) to accommodate diverse user preferences and reduce friction during onboarding. The minimalist design focuses on essential elements.</p>
+            </div>
+            
+            <!-- Wireframe 6: Profile Settings -->
+            <div class="wireframe-image-container">
+                <img src="bearvfx/bearvfx_wireframe_profile_settings.png" alt="BearEdvance Profile and Settings">
+                <p class="wireframe-caption">User Profile & Settings: Organized Information Management</p>
+                <p class="wireframe-description">The profile page organizes settings into clear categories (Personal Information, Account Settings, Notifications, Subscription), empowering users with control over their experience while maintaining visual consistency.</p>
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 3rem;">
+                <p><strong>Design System Approach:</strong> All wireframes follow a consistent design language with reusable components, standardized spacing, and clear visual hierarchy. This systematic approach ensures scalability and maintainability as the platform grows.</p>
+            </div>
+        </section>
+
+        <section id="detailed-ui">
+            <h2 class="section-heading">Detailed UI Screens</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0; text-align: center;">Beyond wireframes, I designed high-fidelity UI screens that bring the platform to life with color, typography, and interactive elements.</p>
+            
+            <div class="content-card" style="margin-bottom: 3rem;">
+                <h3>Screen 1: TOPIC INPUT</h3>
+                <p style="margin-bottom: 1.5rem;">Educators begin by entering their lecture topic and selecting content type (lecture, experiment, or quiz). The interface is clean and minimal, reducing friction at the entry point.</p>
+                <div style="background: #FEF3C7; padding: 2.5rem; border-radius: 12px; text-align: center;">
+                    <div style="max-width: 600px; margin: 0 auto;">
+                        <div style="background: white; padding: 1.25rem; border-radius: 8px; border: 2px solid #e0e0e0; margin-bottom: 1rem;">
+                            <p style="text-align: left; color: #999; font-size: 0.95rem;">enter your topic...</p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.25rem;">
+                            <div style="background: #FFF5E6; padding: 1rem; border-radius: 8px; border: 2px solid #F59E0B;">
+                                <p style="font-size: 1.5rem; margin-bottom: 0.3rem;">🗣️</p>
+                                <p style="font-size: 0.9rem; font-weight: 600;">lecture</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 8px; border: 2px solid #e0e0e0;">
+                                <p style="font-size: 1.5rem; margin-bottom: 0.3rem;">🧪</p>
+                                <p style="font-size: 0.9rem; font-weight: 600;">experiment</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 8px; border: 2px solid #e0e0e0;">
+                                <p style="font-size: 1.5rem; margin-bottom: 0.3rem;">🧠</p>
+                                <p style="font-size: 0.9rem; font-weight: 600;">quiz</p>
+                            </div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); padding: 1rem; border-radius: 8px; color: white; font-weight: 600;">
+                            generate video
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="margin-bottom: 3rem;">
+                <h3>Screen 2: AI GENERATION PIPELINE</h3>
+                <p style="margin-bottom: 1.5rem;">A transparent progress dashboard shows each step of the AI generation process. This builds trust and manages user expectations during the 2-3 minute wait time.</p>
+                <div style="background: #FEF3C7; padding: 2.5rem; border-radius: 12px;">
+                    <div style="display: grid; gap: 1rem;">
+                        <div style="background: #E8F5E9; padding: 1.25rem; border-radius: 8px; border: 2px solid #4CAF50; display: grid; grid-template-columns: 50px 1fr auto; gap: 1.25rem; align-items: center;">
+                            <div style="width: 50px; height: 50px; background: #4CAF50; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem;">1</div>
+                            <div>
+                                <p style="font-weight: 600; margin-bottom: 0.3rem;">topic input received</p>
+                                <p style="font-size: 0.9rem; color: #666;">"the history of the roman empire"</p>
+                            </div>
+                            <p style="color: #4CAF50; font-weight: 600; font-size: 0.9rem;">complete</p>
+                        </div>
+                        <div style="background: #E8F5E9; padding: 1.25rem; border-radius: 8px; border: 2px solid #4CAF50; display: grid; grid-template-columns: 50px 1fr auto; gap: 1.25rem; align-items: center;">
+                            <div style="width: 50px; height: 50px; background: #4CAF50; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem;">2</div>
+                            <div>
+                                <p style="font-weight: 600; margin-bottom: 0.3rem;">script generation (openai gpt-3.5)</p>
+                                <p style="font-size: 0.9rem; color: #666;">drafting lecture content and slides</p>
+                            </div>
+                            <p style="color: #4CAF50; font-weight: 600; font-size: 0.9rem;">complete</p>
+                        </div>
+                        <div style="background: #FFF5E6; padding: 1.25rem; border-radius: 8px; border: 2px solid #F59E0B; display: grid; grid-template-columns: 50px 1fr auto; gap: 1.25rem; align-items: center;">
+                            <div style="width: 50px; height: 50px; background: #F59E0B; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem;">3</div>
+                            <div>
+                                <p style="font-weight: 600; margin-bottom: 0.3rem;">audio synthesis (microsoft azure tts)</p>
+                                <p style="font-size: 0.9rem; color: #666;">converting script to narration</p>
+                            </div>
+                            <p style="color: #F59E0B; font-weight: 600; font-size: 0.9rem;">active</p>
+                        </div>
+                        <div style="background: white; padding: 1.25rem; border-radius: 8px; border: 2px solid #e0e0e0; display: grid; grid-template-columns: 50px 1fr auto; gap: 1.25rem; align-items: center;">
+                            <div style="width: 50px; height: 50px; background: #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem;">4</div>
+                            <div>
+                                <p style="font-weight: 600; margin-bottom: 0.3rem;">video assembly (wav2lip)</p>
+                                <p style="font-size: 0.9rem; color: #666;">creating lip-synced video</p>
+                            </div>
+                            <p style="color: #999; font-weight: 600; font-size: 0.9rem;">pending</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="margin-bottom: 3rem;">
+                <h3>Screen 3: CHARACTER SELECTION</h3>
+                <p style="margin-bottom: 1.5rem;">Educators choose from diverse AI characters, each with unique voices and personalities. This personalization increases engagement and allows educators to match characters to their teaching style.</p>
+                <div style="background: #FEF3C7; padding: 2.5rem; border-radius: 12px;">
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;">
+                        <div style="background: white; border-radius: 12px; overflow: hidden; border: 3px solid #F59E0B; box-shadow: 0 0 0 4px #FFF5E6;">
+                            <div style="background: linear-gradient(135deg, #D97706 0%, #B45309 100%); padding: 3.75rem 1.25rem; text-align: center; font-size: 3rem;">👩‍🏫</div>
+                            <div style="padding: 1.25rem;">
+                                <p style="font-weight: 600; margin-bottom: 0.3rem;">professor elara</p>
+                                <p style="font-size: 0.9rem; color: #666;">clear, authoritative</p>
+                            </div>
+                        </div>
+                        <div style="background: white; border-radius: 12px; overflow: hidden; border: 3px solid #e0e0e0;">
+                            <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 3.75rem 1.25rem; text-align: center; font-size: 3rem;">👨‍🔬</div>
+                            <div style="padding: 1.25rem;">
+                                <p style="font-weight: 600; margin-bottom: 0.3rem;">dr. aris</p>
+                                <p style="font-size: 0.9rem; color: #666;">calm, insightful</p>
+                            </div>
+                        </div>
+                        <div style="background: white; border-radius: 12px; overflow: hidden; border: 3px solid #e0e0e0;">
+                            <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 3.75rem 1.25rem; text-align: center; font-size: 3rem;">🤖</div>
+                            <div style="padding: 1.25rem;">
+                                <p style="font-weight: 600; margin-bottom: 0.3rem;">unit 734</p>
+                                <p style="font-size: 0.9rem; color: #666;">futuristic, precise</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <h3>Screen 4: VIDEO PREVIEW & EXPORT</h3>
+                <p style="margin-bottom: 1.5rem;">The final screen allows educators to preview their generated video, navigate between slides, and export in multiple formats. They can also edit the script if needed before finalizing.</p>
+                <div style="background: #FEF3C7; padding: 2.5rem; border-radius: 12px;">
+                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+                        <div>
+                            <div style="background: #000; border-radius: 12px; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; margin-bottom: 1rem;">▶️</div>
+                            <div style="background: white; padding: 1.25rem; border-radius: 12px;">
+                                <div style="height: 8px; background: #e0e0e0; border-radius: 4px; margin-bottom: 1rem; position: relative;">
+                                    <div style="height: 100%; width: 35%; background: #F59E0B; border-radius: 4px;"></div>
+                                </div>
+                                <div style="display: flex; gap: 1rem; justify-content: center;">
+                                    <div style="width: 40px; height: 40px; background: white; border: 2px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center;">⏪</div>
+                                    <div style="width: 40px; height: 40px; background: white; border: 2px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center;">⏯️</div>
+                                    <div style="width: 40px; height: 40px; background: white; border: 2px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center;">⏩</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px;">
+                            <p style="font-weight: 600; margin-bottom: 1rem; font-size: 1.125rem;">video slides</p>
+                            <div style="display: grid; gap: 0.75rem;">
+                                <div style="background: #FFF5E6; padding: 0.75rem; border-radius: 8px; border: 2px solid #F59E0B;">
+                                    <p style="font-size: 0.75rem; color: #666; margin-bottom: 0.2rem;">slide 1</p>
+                                    <p style="font-weight: 600; font-size: 0.9rem;">introduction to roman empire</p>
+                                </div>
+                                <div style="background: #f9f9f9; padding: 0.75rem; border-radius: 8px; border: 2px solid transparent;">
+                                    <p style="font-size: 0.75rem; color: #666; margin-bottom: 0.2rem;">slide 2</p>
+                                    <p style="font-weight: 600; font-size: 0.9rem;">founding myths & early republic</p>
+                                </div>
+                                <div style="background: #f9f9f9; padding: 0.75rem; border-radius: 8px; border: 2px solid transparent;">
+                                    <p style="font-size: 0.75rem; color: #666; margin-bottom: 0.2rem;">slide 3</p>
+                                    <p style="font-weight: 600; font-size: 0.9rem;">rise of julius caesar</p>
+                                </div>
+                            </div>
+                            <div style="margin-top: 1.25rem; display: grid; gap: 0.75rem;">
+                                <div style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); padding: 0.75rem; border-radius: 8px; color: white; font-weight: 600; text-align: center;">export video</div>
+                                <div style="background: white; padding: 0.75rem; border-radius: 8px; border: 2px solid #e0e0e0; font-weight: 600; text-align: center;">edit script</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results">
+            <h2 class="section-heading">Results & Impact</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">80%</div>
+                    <div class="stat-label">Workload Reduction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">22%</div>
+                    <div class="stat-label">Task Completion Improvement</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5 min</div>
+                    <div class="stat-label">Average Generation Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10x</div>
+                    <div class="stat-label">Content Production Increase</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 3rem;">
+                <p><strong>Educator Feedback:</strong> "BearEdvance transformed my workflow. What used to take me an entire afternoon now takes less time than making coffee. I can focus on teaching instead of video editing, and my students get more content than ever before." — Dr. Sarah Chen, Biology Professor</p>
+            </div>
+            
+            <div class="highlight-box">
+                <p><strong>Pilot Results:</strong> During our 8-week pilot with 12 educators across 4 disciplines, we measured an average time savings of 3.8 hours per video. Educators reported that the AI-generated scripts required minimal editing (average 8 minutes of revisions), and the video quality met or exceeded their manual efforts.</p>
+            </div>
+        </section>
+
+        <section id="learnings">
+            <h2 class="section-heading">Key Learnings</h2>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>1. TRANSPARENCY BUILDS TRUST</h3>
+                    <p>Showing the AI pipeline in real-time (script generation → audio synthesis → video assembly) significantly increased user trust. Educators appreciated seeing "behind the curtain" rather than treating the platform as a black box.</p>
+                </div>
+                <div class="content-card">
+                    <h3>2. CONTROL IS ESSENTIAL</h3>
+                    <p>While automation saves time, educators need control over final output. Adding script editing and character selection features increased adoption by 40% compared to our initial fully-automated prototype.</p>
+                </div>
+                <div class="content-card">
+                    <h3>3. QUALITY OVER SPEED</h3>
+                    <p>Early testing revealed that educators would rather wait 5 minutes for high-quality output than get instant low-quality results. We optimized for quality while keeping generation time under 5 minutes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="future">
+            <h2 class="section-heading">Future Opportunities</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">The next phase of BearEdvance will focus on expanding AI capabilities, adding collaborative features, and integrating with learning management systems.</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>MULTI-LANGUAGE SUPPORT</h3>
+                    <p>Expand to support 20+ languages for script generation and audio synthesis, enabling global reach and accessibility for non-English speaking educators.</p>
+                </div>
+                <div class="content-card">
+                    <h3>CUSTOM AVATARS</h3>
+                    <p>Allow educators to upload their own photos to create personalized AI avatars, maintaining their unique teaching presence while automating video production.</p>
+                </div>
+                <div class="content-card">
+                    <h3>LMS INTEGRATION</h3>
+                    <p>Integrate with Canvas, Blackboard, and Moodle to enable one-click publishing of generated videos directly to course modules.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
